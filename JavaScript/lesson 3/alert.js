@@ -32,14 +32,14 @@
 // console.log(result);
 
 
-// do {
-//     name = prompt("Enter your login name")
-// } while (name != "admin");
-//
-// do {
-//     password = prompt("Enter your password")
-// } while (password != "123123");
-// alert("Hello,admin");
+do {
+    name = prompt("Enter your login name")
+} while (name != "admin");
+
+do {
+    password = prompt("Enter your password")
+} while (password != "123123");
+alert("Hello,admin");
 
 // var limit=prompt("Enter the limit");
 // for(var i=0;i<limit;i+=2){
