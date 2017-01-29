@@ -7,6 +7,8 @@ function pow(x, n) {
 
     return result;
 }
+
+
 var x = prompt("x?", '');
 var n = prompt("n?", '');
 alert(pow(x, n));
@@ -24,51 +26,50 @@ function chet(k, n) {
 chet(1, 30);
 
 
-var sum = 0;
-for (var i = 20; i <= 40; i++)
+var sum = 5;
+for (var i = sum + 1; i <= 10; i++)
     sum += i;
 alert(sum);
 
-var suma = 0;
-for (var i = 10; i <= 60; i++)
+
+var suma = 10;
+for (var i = suma + 1; i <= 60; i++)
     if (i % 3 == 0 && i % 10 !== 0)
         suma += i;
 alert(suma);
-___________________________
-for (i = 1; i <= 10; i++)
-    for (j = 2; j <= 10; j++)
-        console.log("i+j");
-____________________________
 
-var c = prompt("Введите день");
-var b = prompt("Начальний метраж");
-var a = prompt("Увеличение кажен день на");
-if (c = "1") {
-    var per = a + (a * b);
-    alert(per)
+
+for (var i = 2; i <= 10; i++) {
+    for (var j = 2; j <= 10; j++) {
+        document.write(i + 'x' + j + ' = ' + i * j + '<br />');
+    }
+    document.write('<br />');
 }
-else if (c = "2") {
-    var dru = per + per * 0.1;
-    alert(dru)
+
+
+var i = 500,
+    floats = [];
+
+while (i < 7000) {
+    i = (i + 0.1 * i).toFixed(1);
+    floats.push(i);
+    i = parseFloat(i);
+
 }
-else if (c = "3") {
-    var tret = dru + dru * 0.1;
-    alert(tret)
-}
-else if (c = "4") {
-    var chetv = tret + tret * 0.1;
-    alert(chet)
-}
-else if (c = "5") {
-    var pyat = chetv + chetv * 0.1;
-    alert(pyat)
-}
+console.log(floats);
+console.log(floats[3] + "za 5 dniv probig");
+console.log(floats[10] + "za 12 dniv probig");
+console.log(floats.length - 2 + " днів треба шоб пробігти Васі 7000км");
+
 
 function factorial(n) {
     return (n != 1) ? n * factorial(n - 1) : 1;
 }
+;
+
 
 alert(factorial(7));
+
 
 function fib(n) {
     var a = 1,
