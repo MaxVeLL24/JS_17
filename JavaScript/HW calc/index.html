@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="calc.css">
+</head>
+<body>
+<div id="calc" style="display: inline-block; margin-right: 50px">
+    <div class="calc-box">
+        <div class="calc-display">
+            <div class="calc-output">0</div>
+            <input type="text" class="calc-input">
+        </div>
+        <div class="calc-body">
+            <div class="calc-nubers">
+                <button data-number="salat">7</button>
+                <button data-number="8">8</button>
+                <button data-number="9">9</button>
+                <button data-number="4">4</button>
+                <button data-number="5">5</button>
+                <button data-number="6">6</button>
+                <button data-number="1">1</button>
+                <button data-number="2">2</button>
+                <button data-number="3">3</button>
+                <button data-number="c">c</button>
+                <button data-number="0">0</button>
+                <button data-number=".">.</button>
+            </div>
+            <div class="calc-actions">
+                <button>+</button>
+                <button>-</button>
+            </div>
+        </div>
+        <div class="calc-footer">
+            <button class="calc-result">=</button>
+        </div>
+    </div>
+</div>
+
+<div id="calc2" style="display: inline-block">
+
+</div>
+<script type="text/javascript">
+    function createCalc(id) {
+        var calcBox = new Elem('div');
+        calcBox.addClass('calc-box');
+
+        var calcDisplay = new Elem('div');
+        calcDisplay.addClass('calc-display');
+
+        calcDisplay
+            .addChild('div')
+            .addClass('calc-out')
+            .addContent(0);
+        calcDisplay
+            .addChild('input')
+            .addClass('calc-input')
+            .setAttribute('value', 0);
+
+        calcDisplay.appendTo(calcBox.el);
+
+        var calcBody = new Elem('div');
+        calcBody.addClass('calc-body');
+
+        var buttons = [7, 8, 9, 4, 5, 6, 1, 2, 3, 'c', 0, '.'];
+        var actionButtons = ['+', '-', '*', '/'];
+        var numBox =
+            calcBody
+                .addChild('div')
+                .addClass('calc-nubers');
+        for (var i = 0; i < buttons.length; i++) {
+            numBox
+                .addChild('button')
+                .addContent(buttons[i])
+                .setAttribute('data-number', buttons[i]);
+        }
+        var actionBox =
+            calcBody
+                .addChild('div')
+                .addClass('calc-actions');
+        for (var j = 0; j < actionButtons.length; j++) {
+            actionBox
+                .addChild('button')
+                .addContent(actionButtons[j])
+                .setAttribute('data-action', actionButtons[j])
+        }
+        calcBody.appendTo(calcBox.el);
+
+        var calcFooter = new Elem('div');
+        var calcResult = calcFooter.addChild('button').addClass('calc-result').addContent('=');
+
+        calcFooter.appendTo(calcBox.el);
+
+        document.getElementById(id).appendChild(calcBox.el);
+    }
+
+    function Elem(tag) {
+        this.el = document.createElement(tag);
+        this.children = [];
+        this.addClass = function (classes) {
+            if (typeof classes == 'string') {
+                this.el.classList.add(classes);
+            } else {
+                for (var i = 0; i < classes.length; i++) {
+                    this.el.classList.add(classes[i]);
+                }
+            }
+            return this;
+        };
+
+        this.setAttribute = function (attrName, value) {
+            this.el.setAttribute(attrName, value);
+            return this;
+        };
+
+        this.appendTo = function (parent) {
+            parent.appendChild(this.el);
+            return this;
+        };
+
+        this.addChild = function (tag) {
+            var child = new Elem(tag);
+            this.children.push(child);
+            this.el.appendChild(child.el);
+            return child;
+        };
+
+        this.addContent = function (content) {
+            this.el.innerHTML = content;
+            return this;
+        }
+    }
+</script>
+<script type="text/javascript" src="calc.js" defer></script>
+</body>
+</html>

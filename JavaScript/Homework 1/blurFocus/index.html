@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            outline: none;
+            font-size: 18px;
+            color: darkcyan;
+            width: 200px;
+            border: none;
+            border-bottom: 2px solid darkcyan;
+        }
+
+        .placeholder-top {
+            color: darkcyan;
+            position: fixed;
+            font-size: 16px;
+        }
+
+        #mouse {
+            display: inline-block;
+            cursor: pointer;
+            margin: 0;
+            color: darkcyan;
+            font-weight: bold;
+        }
+
+        #mouse:focus {
+            outline: none;
+            color: red;
+        }
+
+        #view,
+        #area {
+            height: 180px;
+            width: 500px;
+            font-size: 16px;
+        }
+
+        #view {
+            padding: 2px;
+            border: 1px solid darkcyan;
+        }
+
+        #area {
+            display: none;
+        }
+
+        .edit-td .edit-area {
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            resize: none;
+        }
+
+        .edit-controls {
+            position: absolute;
+        }
+
+        .edit-td {
+            position: relative;
+            padding: 0;
+        }
+
+        th {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td {
+            width: 150px;
+            white-space: nowrap;
+            text-align: center;
+            vertical-align: middle;
+            padding: 10px;
+        }
+
+        .nw {
+            background-color: #999;
+        }
+
+        .n {
+            background-color: #03f;
+            color: #fff;
+        }
+
+        .ne {
+            background-color: #ff6;
+        }
+
+        .w {
+            background-color: #ff0;
+        }
+
+        .c {
+            background-color: #60c;
+            color: #fff;
+        }
+
+        .e {
+            background-color: #09f;
+            color: #fff;
+        }
+
+        .sw {
+            background-color: #963;
+            color: #fff;
+        }
+
+        .s {
+            background-color: #f60;
+            color: #fff;
+        }
+
+        .se {
+            background-color: #0c3;
+            color: #fff;
+        }
+
+        #placeholder {
+            position: absolute;
+            margin-top: -21px;
+            color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<input type="email" data-placeholder="E-mail">
+<br>
+<pre id="mouse" tabindex="0">
+ _   _
+(q\_/p)
+ /. .\
+=\_t_/=   __
+ /   \   (
+((   ))   )
+/\) (/\  /
+\  Y  /-'
+ nn^nn
+</pre>
+<br>
+<h4>Ctrl-E для начала редактирования.
+    Во время редактирования: Ctrl-S для сохранения, Esc для отмены.</h4>
+<textarea id="area"></textarea>
+<div id="view">Текст</div>
+<br>
+<br>
+<table id="bagua-table">
+    <tr>
+        <th colspan="3"><em>Bagua</em> Chart: Direction, Element, Color, Meaning</th>
+    </tr>
+    <tr>
+        <td class="nw"><strong>Northwest</strong>
+            <br>Metal
+            <br>Silver
+            <br>Elders
+        </td>
+        <td class="n"><strong>North</strong>
+            <br>Water
+            <br>Blue
+            <br>Change
+        </td>
+        <td class="ne"><strong>Northeast</strong>
+            <br>Earth
+            <br>Yellow
+            <br>Direction
+        </td>
+    </tr>
+    <tr>
+        <td class="w"><strong>West</strong>
+            <br>Metal
+            <br>Gold
+            <br>Youth
+        </td>
+        <td class="c"><strong>Center</strong>
+            <br>All
+            <br>Purple
+            <br>Harmony
+        </td>
+        <td class="e"><strong>East</strong>
+            <br>Wood
+            <br>Blue
+            <br>Future
+        </td>
+    </tr>
+    <tr>
+        <td class="sw"><strong>Southwest</strong>
+            <br>Earth
+            <br>Brown
+            <br>Tranquility
+        </td>
+        <td class="s"><strong>South</strong>
+            <br>Fire
+            <br>Orange
+            <br>Fame
+        </td>
+        <td class="se"><strong>Southeast</strong>
+            <br>Wood
+            <br>Green
+            <br>Romance
+        </td>
+    </tr>
+
+</table>
+<br>
+<input type="password" id="input">
+
+<div id="placeholder">Enter your password</div>
+<br>
+<br>
+<input type="text" onkeyup="checkCapsWarning(event)" onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()" />
+
+<div style="display:none;color:red;font-weight: bold" id="capsIndicator">CapsLock ON!</div>
+<br>
+<br>
+<br>
+<script>
+    /*Плейсхолдер */
+    var input = document.querySelector('[data-placeholder]');
+    showPlaceholder(input);
+
+    function showPlaceholder(input) {
+        input.classList.add('placeholder');
+        input.value = input.dataset.placeholder;
+    }
+
+    function showTooltip(input) {
+        var tooltip = document.createElement('span');
+        tooltip.innerHTML = input.dataset.placeholder;
+        tooltip.className = 'placeholder-top';
+        tooltip.style.fontSize = getComputedStyle(input).fontSize;
+        tooltip.style.left = input.getBoundingClientRect().left + 'px';
+        document.body.appendChild(tooltip);
+        tooltip.style.top = input.getBoundingClientRect().top - tooltip.offsetHeight - 4 + 'px';
+        input.tooltip = tooltip;
+    }
+
+    input.onfocus = function () {
+        if (input.classList.contains('placeholder')) {
+            input.classList.remove('placeholder');
+            input.value = '';
+        }
+        showTooltip(input);
+    };
+
+    input.onblur = function () {
+        document.body.removeChild(input.tooltip);
+        delete input.tooltip;
+        if (input.value == '') {
+            showPlaceholder(input);
+        }
+    };
+
+
+    /*д/з з мишонком*/
+    document.getElementById('mouse').onclick = function () {
+        this.style.left = this.getBoundingClientRect().left + 'px';
+        this.style.top = this.getBoundingClientRect().top + 'px';
+        this.style.position = 'fixed';
+    };
+    document.getElementById('mouse').onkeydown = function (e) {
+        switch (e.keyCode) {
+            case 37:
+                this.style.left = parseInt(this.style.left) - this.offsetWidth + 'px';
+                return false;
+            case 38:
+                this.style.top = parseInt(this.style.top) - this.offsetHeight + 'px';
+                return false;
+            case 39:
+                this.style.left = parseInt(this.style.left) + this.offsetWidth + 'px';
+                return false;
+            case 40:
+                this.style.top = parseInt(this.style.top) + this.offsetHeight + 'px';
+                return false;
+        }
+    };
+
+
+    /*Textarea*/
+    document.onkeydown = function (e) {
+        if (e.keyCode == 27) {
+            cancel();
+            return false;
+        }
+        if ((e.ctrlKey && e.keyCode == 'E'.charCodeAt(0)) && !area.offsetHeight) {
+            edit();
+            return false;
+        }
+        if ((e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) && area.offsetHeight) {
+            save();
+            return false;
+        }
+    };
+    function edit() {
+        view.style.display = 'none';
+        area.value = view.innerHTML;
+        area.style.display = 'block';
+        area.focus();
+    }
+    function save() {
+        area.style.display = 'none';
+        view.innerHTML = area.value;
+        view.style.display = 'block';
+    }
+    function cancel() {
+        area.style.display = 'none';
+        view.style.display = 'block';
+    }
+
+    /*Редактирование TD по клику*/
+    var table = document.getElementById('bagua-table');
+
+    var editingTd;
+
+    table.onclick = function (event) {
+
+        var target = event.target;
+
+        while (target != table) {
+            if (target.className == 'edit-cancel') {
+                finishTdEdit(editingTd.elem, false);
+                return;
+            }
+
+            if (target.className == 'edit-ok') {
+                finishTdEdit(editingTd.elem, true);
+                return;
+            }
+
+            if (target.nodeName == 'TD') {
+                if (editingTd) return; // already editing
+
+                makeTdEditable(target);
+                return;
+            }
+
+            target = target.parentNode;
+        }
+    };
+
+    function makeTdEditable(td) {
+        editingTd = {
+            elem: td,
+            data: td.innerHTML
+        };
+
+        td.classList.add('edit-td');
+
+        var textArea = document.createElement('textarea');
+        textArea.style.width = td.clientWidth + 'px';
+        textArea.style.height = td.clientHeight + 'px';
+        textArea.className = 'edit-area';
+
+        textArea.value = td.innerHTML;
+        td.innerHTML = '';
+        td.appendChild(textArea);
+        textArea.focus();
+
+        td.insertAdjacentHTML("beforeEnd",
+            '<div class="edit-controls"><button class="edit-ok">OK</button><button class="edit-cancel">CANCEL</button></div>'
+        );
+    }
+
+    function finishTdEdit(td, isOk) {
+        if (isOk) {
+            td.innerHTML = td.firstChild.value;
+        } else {
+            td.innerHTML = editingTd.data;
+        }
+        td.classList.remove('edit-td');
+        editingTd = null;
+    }
+
+    /*next placeholder*/
+    var placeholder = document.getElementById('placeholder');
+    var inputNext = document.getElementById('input');
+
+    placeholder.onclick = function () {
+        inputNext.focus();
+    };
+
+    inputNext.onfocus = function () {
+        placeholder.parentNode && placeholder.parentNode.removeChild(placeholder);
+    };
+/*CapsLock*/
+    var capsLockEnabled = null;
+
+    function getChar(event) {
+        if (event.which != 0 && event.charCode != 0) {
+            if (event.which < 32) return null;
+            return String.fromCharCode(event.which);
+        }
+
+        return null;
+    }
+    document.onkeypress = function(e) {
+        e = e || event;
+
+        var chr = getChar(e);
+        if (!chr) return;
+
+        if (chr.toLowerCase() == chr.toUpperCase()) {
+            return;
+        }
+
+        capsLockEnabled = (chr.toLowerCase() == chr && e.shiftKey) || (chr.toUpperCase() == chr && !e.shiftKey);
+    };
+
+    function checkCapsWarning() {
+        document.getElementById('capsIndicator').style.display = capsLockEnabled ? 'block' : 'none';
+    }
+
+    function removeCapsWarning() {
+        document.getElementById('capsIndicator').style.display = 'none';
+    }
+</script>
+</body>
+</html>

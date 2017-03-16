@@ -1,0 +1,11 @@
+.selected {
+    display: none;
+}
+span{
+    transition: 300ms;
+    color: darkcyan;
+}
+span:hover{
+   font-weight: bold;
+    color: #005454;
+}

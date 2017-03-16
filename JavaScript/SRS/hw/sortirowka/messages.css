@@ -1,0 +1,10 @@
+th{
+    cursor: pointer;
+    color: #007979;
+    font-weight: bolder;
+    transition: 500ms;
+}
+th:hover{
+    border-bottom: 1px solid darkcyan;
+    background-color: #d8d8d8;
+}

@@ -1,4 +1,10 @@
-var doc = document.getElementById("ppt");
+var buttons = document.querySelectorAll('#messages-container .remove-button');
 
-doc.innerHTML = "gjgofjgof";
-doc.style.backgroundColor="red";
+for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+
+    button.onclick = function() {
+        var el = this.parentNode;
+        el.parentNode.removeChild(el);
+    };
+}

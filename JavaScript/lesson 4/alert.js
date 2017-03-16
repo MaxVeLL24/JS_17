@@ -23,30 +23,30 @@
 // myF();
 // console.log(x);
 //
-var landscape = function () {
-    var result = "";
-    var flat = function (size) {
-        for (var count = 0; count < size; count++) {
-            result += "_";
-        }
-    };
-    var mountain = function (size) {
-        result += "/";
-        for (var count = 0; count < size; count++) {
-            result += "'";
-        }
-        result += "\\";
-
-    };
-    flat(3);
-    mountain(6);
-    flat(6);
-    mountain(1);
-    flat(1);
-    return result;
-};
-
-console.log(landscape());
+// var landscape = function () {
+//     var result = "";
+//     var flat = function (size) {
+//         for (var count = 0; count < size; count++) {
+//             result += "_";
+//         }
+//     }
+//     var mountain = function (size) {
+//         result += "/";
+//         for (var count = 0; count < size; count++) {
+//             result += "'";
+//         }
+//         result += "\\";
+//
+//     }
+//     flat(3);
+//     mountain(6);
+//     flat(6);
+//     mountain(1);
+//     flat(1);
+//     return result;
+// }
+//
+// console.log(landscape());
 
 var min=function (a,b,c) {
     var result;
@@ -59,4 +59,4 @@ var min=function (a,b,c) {
     else if(c>a && b<c){
         result=c;
     }
-};
+}
