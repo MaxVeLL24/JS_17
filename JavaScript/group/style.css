@@ -69,9 +69,9 @@ body header a {
     margin: 0 auto
 }
 
-body header .offer-builder-title {
-    background-image: url(../msse_vendors/images/offers/offer_brand.png)
-}
+/*body header .offer-builder-title {*/
+    /*background-image: url(../msse_vendors/images/offers/offer_brand.png)*/
+/*}*/
 
 body footer {
     height: 120px;
@@ -96,7 +96,6 @@ body footer a:hover {
 
 body footer a.groupon-works-logo:before {
     content: "";
-    background-image: url(../msse_vendors/images/deal_builder/groupon_works_brand.png);
     width: 210px;
     height: 43px;
     margin-top: 5px
@@ -104,7 +103,6 @@ body footer a.groupon-works-logo:before {
 
 body footer a.groupon-mc-logo:before {
     content: "";
-    background-image: url(../msse_vendors/images/rube_goldberg/rg_grouponmerchant_logo.png);
     height: 22px;
     width: 248px;
     margin-top: 9px
@@ -225,7 +223,7 @@ input:focus, textarea:focus {
 
 .error-text:before {
     content: "";
-    background-image: url(../msse_vendors/images/deal_builder/db_icon_alert.png);
+    background-image: url(img/db_icon_alert.png);
     background-repeat: no-repeat;
     width: 14px;
     height: 14px;
@@ -399,7 +397,7 @@ button[type=button], button[type=submit] {
 
 button[type=button]:before, button[type=submit]:before {
     content: ">";
-    background-image: url(../msse_vendors/images/deal_builder/db_arrow_btn.png);
+    background-image: url(img/db_arrow_btn.png);
     background-repeat: no-repeat;
     background-position: 100%;
     display: block;
@@ -408,7 +406,7 @@ button[type=button]:before, button[type=submit]:before {
 }
 
 .btn-contract, button[type=button][disabled], button[type=submit][disabled] {
-    background-image: url(../msse_vendors/images/deal_builder/db_arrow_btn_disable.png);
+    background-image: url(img/db_arrow_btn_disable.png);
     background-repeat: no-repeat;
     background-position: center right 18px;
     background-color: #f4f2f3;
@@ -499,7 +497,7 @@ button.btn-secondary[type=submit]:before {
 .cupcake-gallery button[class*=btn]:after, .cupcake-gallery button[type=submit]:after {
     content: "";
     padding-left: 7px;
-    background-image: url(../msse_vendors/images/deal_builder/db_arrow_btn.png);
+    background-image: url(img/db_arrow_btn.png);
     background-repeat: no-repeat;
     margin-left: 5px;
     display: inline-block;
@@ -921,7 +919,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .icon-pencil:before {
-    content: "\e01d"
+    content: "Del";
+    color: darkcyan;
+    font-size: 16px;
+    border: 1px solid darkcyan;
 }
 
 .icon-paw:before {
@@ -1667,7 +1668,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .accordion-group.completed .accordion-heading {
-    background-image: url(../msse_vendors/images/deal_builder/ok_icon.png);
+    background-image: url(img/ok_icon.png);
     background-repeat: no-repeat;
     background-position: 95% 50%
 }
@@ -1898,7 +1899,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .help-icon a {
     padding: 0 10px;
-    background-image: url(../msse_vendors/images/deal_builder/db_icon_tooltip.png);
+    background-image: url(img/db_icon_tooltip.png);
     background-repeat: no-repeat;
     background-position: 50%;
     z-index: 10;
@@ -1906,13 +1907,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .download {
-    background-image: url(../msse_vendors/images/deal_builder/db_icon_download.png);
+    /*background-image: url(../msse_vendors/images/deal_builder/db_icon_download.png);*/
     background-repeat: no-repeat;
     padding-left: 25px
 }
 
 .print {
-    background-image: url(../msse_vendors/images/deal_builder/db_icon_print.png);
+    /*background-image: url(../msse_vendors/images/deal_builder/db_icon_print.png);*/
     background-repeat: no-repeat;
     padding: 4px 0 0 25px;
     vertical-align: middle
@@ -1976,7 +1977,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #b9bbbc;
     margin-bottom: 10px;
     display: block;
-    background-image: url(../msse_vendors/images/rube_goldberg/rg_arrow_error.png);
+    /*background-image: url(../msse_vendors/images/rube_goldberg/rg_arrow_error.png);*/
     height: 55px;
     padding-top: 13px;
     background-repeat: no-repeat;
@@ -2036,7 +2037,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .db.trip-block.e:before, .db.trip-block.w:before {
     content: "";
-    background-image: url(../msse_vendors/images/deal_builder/db_tutorial_pointer.png);
+    /*background-image: url(../msse_vendors/images/deal_builder/db_tutorial_pointer.png);*/
     display: block;
     width: 10px;
     height: 75px;
@@ -4586,7 +4587,7 @@ body {
 }
 
 #cont-build nav#steps #rg-redemption-location .rg-location input, #rg-woohoo-wrapper nav#steps #rg-redemption-location .rg-location input {
-    margin: 20px 15px 20px 0;
+    margin: 10px 12px 0px 0px;
     float: left
 }
 

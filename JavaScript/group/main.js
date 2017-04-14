@@ -135,27 +135,7 @@ $(document).ready(function () {
     });
     $('.btn.flat-btn').click(function (event) {
         event.preventDefault();
-        for (i = 0; i <= 4;) {
-            if (i = 2) {
-                $('#questionnaire').find('.carousel-label').text('What was the inspiration to start or run this business?');
-            }
-            if (i = 3) {
-                $('#questionnaire').find('.carousel-label').text('What do you love most about your job?');
-            }
-            if (i = 4) {
-                $('#questionnaire').find('.carousel-label').text('What is the best feedback you’ve ever received from a customer?');
-            }
-            if ($(this).hasClass('next')) {
-                i++;
-                $('.dispnumber').text(1 + i);
-                break
-            }
-            if ($(this).hasClass('prev')) {
-                i--;
-                $('.dispnumber').text(i - 1);
-                break
-            }
-        }
+
 
     });
     $('.flat-btn.add').click(function () {
@@ -165,16 +145,26 @@ $(document).ready(function () {
     $('button.add_location').click(function (event) {
         event.preventDefault();
         var locationInputVal = $('#location-text-box').val();
-        $('.rg-location').clone().appendTo('.flex-active-slide');
-        $('.rg-location').last().find('span').html(locationInputVal);
+        $('.rg-location:first').clone().css({"display": 'block'}).appendTo('.flex-active-slide');
+        $('.rg-location').last().find('span:first').html(locationInputVal);
         $('.businessAddress').css({"display": 'block'});
         $('.add-location').css({'display': 'none'})
 
 
     });
-    $('button.cancel_add_location').click(function () {
+    $('button.cancel_add_location').click(function (event) {
+        event.preventDefault();
         $('.businessAddress').css({"display": 'block'});
         $('.add-location').css({'display': 'none'})
     });
-    // myMap();
+
+    $('.flex-active-slide').click(function (event) {
+        if ($(event.target).is('span.icon-pencil')) {
+            $(event.target).parents('.rg-location').css({'display': 'none'})
+        }
+        else if ($(event.target).is('.rg-location input')) {
+            $('.rg-location input').not(event.target).prop('checked', false);
+        }
+    });
+
 });

@@ -63,10 +63,6 @@ div.help {
     content: '$';
 }
 
-.completed {
-    color: #82b548;
-}
-
 div.question h5 p{
     color: black;
 }
@@ -116,4 +112,7 @@ div.remover:hover:before{
 
 .btn.flat-btn{
     margin-bottom: 20px;
+}
+*{
+    transition: 1000ms;
 }
