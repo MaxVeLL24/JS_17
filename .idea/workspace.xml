@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b673e002-bf79-4499-85cc-d1639f7b8bec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JavaScript/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/.idea/JS_lesson.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/.idea/04.04.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/img/db_dealpreview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/img/groupon_merchant_logo_horizontal_rgb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_444444_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_555555_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_777620_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_777777_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_cc0000_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_ffffff_256x240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/group/img/db_dealpreview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/group/img/groupon_merchant_logo_horizontal_rgb.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaScript/group/main.js" afterPath="$PROJECT_DIR$/JavaScript/group/main.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,7 +58,7 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JavaScript/group/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="817">
               <caret line="139" column="63" lean-forward="false" selection-start-line="139" selection-start-column="63" selection-end-line="139" selection-end-column="63" />
               <folding />
             </state>
@@ -105,8 +119,9 @@
         <option value="$PROJECT_DIR$/JavaScript/HW calc/calc.css" />
         <option value="$PROJECT_DIR$/JavaScript/HW calc/index.html" />
         <option value="$PROJECT_DIR$/JavaScript/HW calc/calc.js" />
-        <option value="$PROJECT_DIR$/JavaScript/.gitignore" />
         <option value="$PROJECT_DIR$/JavaScript/group/main.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/JavaScript/.gitignore" />
       </list>
     </option>
   </component>
@@ -334,7 +349,7 @@
       <workItem from="1489657023452" duration="107000" />
       <workItem from="1489657188813" duration="14468000" />
       <workItem from="1492180752048" duration="478000" />
-      <workItem from="1492181252465" duration="332000" />
+      <workItem from="1492181252465" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="test 1">
       <created>1492181033828</created>
@@ -343,11 +358,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492181033828</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test 2">
+      <created>1492181600807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492181600807</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77643000" />
+    <option name="totallyTimeSpent" value="77741000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,7 +412,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 1" />
+    <MESSAGE value="test 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -679,14 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.git/info/exclude">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -698,6 +713,14 @@
     <entry file="file://$PROJECT_DIR$/JavaScript/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
@@ -705,7 +728,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript/group/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="817">
           <caret line="139" column="63" lean-forward="false" selection-start-line="139" selection-start-column="63" selection-end-line="139" selection-end-column="63" />
           <folding />
         </state>
