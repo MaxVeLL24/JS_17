@@ -121,7 +121,7 @@ $(document).ready(function () {
             $('#preview').css({"margin-top": "-215px"});
         }
         else if ($('#location').hasClass('open')) {
-            $('#preview').css({"margin-top": "3px"});
+            $('#preview').css({"margin-top": "-850px"});
         }
         else if ($('#nutshellText').hasClass('open')) {
             $('#preview').css({"margin-top": "-243px"});
@@ -159,8 +159,8 @@ $(document).ready(function () {
 
     });
     $('.flat-btn.add').click(function () {
-        $('.businessAddress').css({"display":'none'});
-        $('.add-location').css({'display':'block'})
+        $('.businessAddress').css({"display": 'none'});
+        $('.add-location').css({'display': 'block'})
     });
-    myMap();
+    // myMap();
 });

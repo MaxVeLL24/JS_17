@@ -5047,7 +5047,8 @@ body {
     background-color: #fff;
     box-shadow: 0;
     padding: 10px 20px;
-    overflow: hidden
+    overflow: hidden;
+    min-height: 1600px;
 }
 
 #cont-build .dealPreview .dealPreview-inner .changedValue, #cont-build .dealPreview .dealPreview-inner strong, #rg-woohoo-wrapper .dealPreview .dealPreview-inner .changedValue, #rg-woohoo-wrapper .dealPreview .dealPreview-inner strong {

@@ -103,7 +103,17 @@ div.remover:hover:before{
 }
 #googleMap{
     margin-top: 20px;
+    position: relative;
+
 }
+#googleMap input{
+    position: absolute;
+    top: 379px;
+    left: 35%;
+    width: 300px;
+    z-index: 999;
+}
+
 .btn.flat-btn{
     margin-bottom: 20px;
 }
