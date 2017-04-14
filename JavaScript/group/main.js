@@ -163,5 +163,4 @@ $(document).ready(function () {
         $('.add-location').css({'display':'block'})
     });
     myMap();
-    //PHPStorm Git test 14.04
 });
