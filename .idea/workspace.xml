@@ -2,23 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b673e002-bf79-4499-85cc-d1639f7b8bec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/.idea/JS_lesson.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/.idea/04.04.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/img/db_dealpreview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/img/groupon_merchant_logo_horizontal_rgb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_444444_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_555555_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_777620_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_777777_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_cc0000_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/04.04/jqueryUI/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/group/img/db_dealpreview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JavaScript/group/img/groupon_merchant_logo_horizontal_rgb.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -349,7 +332,7 @@
       <workItem from="1489657023452" duration="107000" />
       <workItem from="1489657188813" duration="14468000" />
       <workItem from="1492180752048" duration="478000" />
-      <workItem from="1492181252465" duration="430000" />
+      <workItem from="1492181252465" duration="443000" />
     </task>
     <task id="LOCAL-00001" summary="test 1">
       <created>1492181033828</created>
@@ -365,11 +348,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492181600807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="test 3">
+      <created>1492181689345</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492181689345</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77741000" />
+    <option name="totallyTimeSpent" value="77754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,7 +403,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test 1" />
     <MESSAGE value="test 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="test 2" />
+    <MESSAGE value="test 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="test 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
