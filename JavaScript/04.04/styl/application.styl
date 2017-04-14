@@ -1,0 +1,2310 @@
+@import 'variables'
+@import 'layout'
+@import 'icons'
+@import 'no-gig'
+@import 'form'
+@import 'typography'
+@import 'grid'
+@import 'patterns'
+@import 'mixins'
+@import 'extends'
+@import 'themes'
+@import 'modal'
+@import 'sticky-footer'
+@import 'responsive'
+
+html
+  background-image: url("../msse_vendors/images/deal_builder/grid_paper_soft.png")
+  background-position: 0 -83px
+  background-color: $soft-gray-color
+
+body
+  min-width: 0
+  background: none
+
+#dealBuilder
+  position: relative
+  height: 100%
+  display: block
+
+.clo-nutshell
+  font-weight: normal !important
+
+.clo-writeup-header
+  margin: 15px 0px 10px 0px
+
+.clo-woohoo
+  .clo-woohoo-inner
+    .details-last-step
+      .details-last-title
+        text-align: inherit !important
+
+.agreement-checkbox
+  display: inline-block
+  height: 40px
+  vertical-align: middle
+
+#cloAgreement
+  #agreedCheckbox
+    float: left
+  .clo-terms
+    margin: 10px 0px 0px 30px
+    text-align: initial
+  .accordion-body
+    fieldset
+      text-align: center
+
+#bankingInformation
+  .veri-sign
+    width: 114px
+    height: 60px
+    marging-bottom: 20px
+  input
+    margin-bottom: 10px
+  .banking-helper
+    width: 300px
+    height: 100px
+    position: absolute
+    display: none
+    margin: 5px 0px 0px 200px
+
+  .banking-reference:hover .banking-helper
+    display: block
+
+  .validation-message
+    display: none
+    color: red
+
+.spaceship
+  width: 100px
+  margin: 35px 0px 40px 375px
+
+.clo-download
+  margin: 0px 50px 0px 250px
+
+#cont-build,
+#rg-woohoo-wrapper
+  position: relative
+  overflow-y: hidden
+  overflow-x: auto
+  /* This is the background for the steps */
+  &:before
+    content: ""
+    opacity: 0.4
+    display: block
+    position: absolute
+    height: 100%
+    width: $steps-width
+    background-color: $soft-gray-color
+    box-shadow: 4px 0 11px -2px $dark-gray-color
+  .columns
+    padding: 0
+    width: 100%
+  .hidden
+    display: none
+    visibility: hidden
+  nav#steps
+    z-index: 2
+    float: left
+    width: $steps-width
+    margin-right: (- $steps-width)
+    position: relative
+    input
+      font-weight: bold
+      font-size: 14px
+    input.agreement
+      width: 200px
+    #dealImage
+      fieldset
+        padding: 0 25px 30px
+        label
+          margin: 0 0 4px 6px
+        .thumbnails
+          overflow: hidden
+          .slides
+            position: relative
+            border: 0
+            width: 100%
+            li
+              width: 95px
+              height: 59px
+              line-height: 70px
+              margin: 0 0 7px 7px
+              text-align: center
+              float: left
+              border: 1px solid $light-gray-color
+              cursor: pointer
+              position: relative
+              &:nth-of-type(4n+2)
+                margin-left: 6px // total width: 300px, each item 70px, 4 items
+                // across, leaves 3 spaces. 3 doesn't divide evenly into 20
+              &.upload,
+              &.upload-disabled
+                border-style: dashed
+                border-color: $green-dashed-thumbnail
+                color: $green-color
+                font-size: 12px
+                line-height: 1
+                & span
+                  clear: both
+                  display: block
+                  font-size: 35px
+                  font-weight: bold
+                  height: 35px
+                  line-height: 1
+                  margin: 0 auto
+                  width: 20px
+              &.upload-disabled
+                border-color: $light-gray-color
+                color: $light-gray-color
+                cursor: not-allowed
+                &:hover
+                  outline: 0 !important
+                  border-color: $light-gray-color
+                  box-shadow(0 0 0 $light-gray-color)
+              &.uploading,
+              &.removing
+                text-indent: -9999em
+                background-image: url('../msse_vendors/images/deal_builder/spinner_small.png')
+                background-repeat: no-repeat
+                background-position: center
+                cursor: default
+                border-color: $light-gray-color !important
+                box-shadow(0 0 0 $light-gray-color)
+                &.selected
+                  border-color: $light-gray-color !important
+                  box-shadow(0 0 0 $light-gray-color)
+                &:hover
+                  outline: none !important
+                  background-color: $white
+                  border-color: $light-gray-color
+                  box-shadow(0 0 0 $light-gray-color)
+                .thumb-container
+                  background-image: url('../msse_vendors/images/deal_builder/spinnerdot_small.gif')
+                  background-repeat: no-repeat
+                  width: 20px
+                  height: 20px
+                  display: block
+                  margin: 19px auto
+                  img
+                    display: none
+                  span
+                    border: 0
+                .remove
+                  display: none !important
+              &:hover,
+              &.selected
+                border-color: $green-color
+                box-shadow(0px 0px 0px 1px $green-color)
+                &:before
+                  content: ''
+                  display: block
+                  background-color: $green-color
+                  position: absolute
+                  bottom: 0
+                  right: 0
+                  line-height: 17px
+              &.selected
+                .remove
+                  cursor: pointer
+                  position: absolute
+                  display: block
+                  background-color: $black
+                  border-radius: 50%
+                  top: -5px
+                  right: -5px
+                  width: 16px
+                  height: 16px
+                  &:after
+                    content: $icon-close
+                    position: absolute
+                    top: 1px
+                    left: 1px
+                    font-size: 14px
+                    color: $white
+              &:hover
+                .thumb-container
+                  outline: 1px solid $white
+              .thumb-container
+                display: block
+                width: 100%
+                height: 100%
+                position: relative
+                overflow: hidden
+                img
+                  position: absolute
+                  top: -9999px
+                  bottom: -9999px
+                  left: -9999px
+                  right: -9999px
+                  margin: auto
+                  width: 120%
+                  max-width: none
+          #upload-input-file
+            position: fixed
+            left: -10000px
+
+        p
+          font-size: 14px
+          color: $gray-text-dealimage
+          margin: 16px 5px 0
+
+      .carousel
+        position: relative
+        border: 0
+        height: 175px
+        margin-bottom: 67px
+        .slides
+          height: 185px
+          width: 100%
+          overflow: hidden
+          img
+            position: absolute
+            left: -5px          // for flexslider bug
+          li:first-of-type img
+            left: 0
+      .flex-control-nav
+        bottom: -88px
+        margin: 30px 0
+        height: 16px
+        li
+          margin: 0 15px 0 0
+      .flex-control-paging li
+        z-index: 10
+        a
+          background-color: $gray-circle-color
+          height: 16px
+          width: 16px
+        a.flex-active
+          background-color: $green-color
+      .flex-direction-nav a
+        position: absolute
+        top: 52%    // accounts for nav icon size to image size ratio
+        background-image: url('../msse_vendors/images/deal_builder/db_image_picker_arrows.png')
+        background-repeat: no-repeat
+        opacity: 1
+        &.flex-prev
+          left: 8px
+        &.flex-next
+          right: 8px
+          background-position: right
+        &:hover
+          background-image: url('../msse_vendors/images/deal_builder/db_image_picker_arrows_hover.png')
+
+    select.serviceSelect
+      text-transform: capitalize
+    .db-gallery
+      background-color: $soft-gray-color
+      text-align: center
+      padding: 80px
+      color: $light-gray-color
+    .deal-regular-price
+      .regular-price-wrap
+        position: relative
+        &:before
+          content: '$'
+          position: absolute
+          line-height: 34px
+          left: 5px
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-size: 14px
+          pointer-events: none // prevent clicking the symbol
+        &.placeholder:before
+          color: $gray
+          font-weight: bold
+      .regularPrice
+        float: left
+        padding-left: 1em
+        line-height: 1.3em
+      .loading-discount
+        background-image: url('../msse_vendors/images/deal_builder/spinner.png')
+        background-repeat: no-repeat
+        display: none
+        float: left
+        color: $green-color
+        font-style: italic
+        margin: -8px 0 0 5px
+        &:before
+          content: ''
+          background-image: url('../msse_vendors/images/deal_builder/spinnerdot.gif')
+          background-repeat: no-repeat
+          padding-left: 27px
+          height: 37px
+          width: 6px
+          float: left
+        span
+          padding: 5px
+          display: block
+          float: left
+          font-size: 14px
+          color: $green-color
+
+    .discount
+      font-family: "Open Sans", "Helvetica Neue", sans-serif
+      font-size: 14px
+      margin-top: 0
+      & ~ .discount // siblings of .discount element (ie; all but the first)
+        margin-top: 6px
+
+    .finePrint-options h6
+        font-weight: normal
+        margin-bottom: 15px
+
+    .finePrint-options
+      div.clickableInput
+        cursor: pointer
+        display: inline
+        text-decoration: underline
+        color: #5BBFD4
+
+        input
+          text-decoration: none
+          cursor: text
+
+      .unselected
+        opacity: 0.4
+
+        div.clickableInput
+          cursor: text
+
+      .fill
+        font-size: 14px
+        input:first-child
+          margin-right: 10px
+        div.clickableInput
+          text-decoration: underline
+          &.editable
+            text-decoration: none
+        .unselected
+          opacity: 0.5
+          a
+            cursor: default
+          .fine-print-checkbox
+            opacity: 1.0
+            cursor: pointer
+        span
+          div.inner-select
+            display: block
+            margin: 5px 0
+            select
+              width: 300px
+    .sign-inner
+      .item
+        float: left
+        margin-right: 20px
+        span
+          font-size: 14px
+          line-height: 34px // Same height as the adjacent input field to vertically center it
+          font-weight: bold
+          color: $black
+      .contract-alert
+        font-size: 12px
+        font-family: "Open Sans", "Helvetica Neue", sans-serif
+        font-weight: bold
+        padding: 10px 0
+      .actions
+        text-align: center
+        padding: 0
+        ul
+          overflow: hidden
+          float: left
+      .clo-agreement
+        float: none !important
+
+    .serviceArea, .businessAddress
+      font-size: 14px
+      label
+        font-weight: bold
+        font-size: 14px
+        display: block
+        color: $black
+      &.unselected
+        .confirm-location
+        .add-location
+        .edit-location
+        .confirm-area
+        .edit-area
+          opacity: 0.4
+
+    .serviceArea
+      .confirm-area
+        .fill-group > span
+          width: 67%
+          float: left
+        a.edit, a.delete
+          float: right
+          text-decoration: none
+          margin-top: -6px
+          &:hover, .icon-pencil:hover, .icon-trash:hover
+            background-color: $cyan-color
+            color: $white
+          > span
+            font-size: 23px
+            text-align: center
+            width: 24px
+      .edit-area
+        h6 > span
+          margin-right: 5px
+
+    .actions
+      clear: both
+      position: relative
+      z-index: 10
+      padding: 30px 0
+      margin-bottom: 0
+      li
+        float: left
+        height: 20px
+        width: 20px
+        &:first-child
+          margin-right: 10px
+        &:last-child
+          margin-left: 10px
+        a
+          height: 20px
+          margin-top: 10px
+          width: 20px
+          &.print
+            background-image: url("../msse_vendors/images/deal_builder/db_icon_print.png")
+          &.download
+            background-image: url("../msse_vendors/images/deal_builder/db_icon_download.png")
+          &.mobile-contract
+            display: none
+          &.tipsy
+            margin-top: 0
+
+    #rg-redemption-location
+      .add-location
+      .edit-location
+        margin: 0
+        h6
+          span
+            margin-right: 5px
+          .delete
+            color: $cyan-color
+            float: right
+      .add
+        display: block
+        clear: both
+        text-align: center
+        text-transform: uppercase
+        font-weight: bold
+        margin-bottom: 30px
+        &.flat-btn:before
+          content: ''
+        &.disabled
+          background-color: $disabled-gray-bg
+          color: $disabled-gray-color
+          border: 1px solid $gray
+
+      button:last-child
+        margin-right: 5px
+      .rg-location
+        margin: 20px 0
+        &:last-child
+          margin-bottom: 30px
+        input
+          margin: 20px 15px 20px 0
+          float: left
+        span
+          font-size: 14px
+          width: 67%
+          float: left
+          p
+            margin: 0
+        a.edit, a.delete
+          float: right
+          text-decoration: none
+          margin: 22px 5px 0
+          &:hover, .icon-pencil:hover, .icon-trash:hover
+            background-color: $cyan-color
+            color: $white
+          span
+            font-size: 23px
+            text-align: center
+            width: 24px
+        &.location-disabled
+          a.edit span:hover
+            background-color: $white
+          .icon-pencil, a.edit span.icon-pencil:hover
+            color: $dark-gray-color
+
+      .flexslider
+        border: none
+        margin-bottom: 20px
+        .flex-direction-nav
+          display: none
+        button
+          clear: both
+          float: left
+        .flex-control-nav.flex-control-paging
+          bottom: 0
+          right: 0
+          width: auto
+          a
+            background-color: $gray-circle-color
+            &.flex-active
+              background-color: $green-color
+        .slider .form-label
+          display: block
+
+    #nutshell
+      p
+        font-size: 14px
+        color: $dark-gray-color
+        span
+          color: $light-gray-color
+          display: block
+          font-style: italic
+          margin: 10px 0
+          clear: both
+          a
+            margin-top: 10px
+            display: block
+      textarea
+        resize: inherit
+        font-size: 14px
+        padding: 5px 10px
+        width: 100%
+        &.error-length
+          background-color: $white
+          border: 1px solid $red-color
+          &:focus
+            border: 1px solid $red-color
+        &.ok-counter
+          border: 1px solid $gray
+          &:focus
+            border: 1px solid $green-color
+
+      .character-count
+        clear: both
+        display: block
+        font-size: 14px
+        margin-top: 5px
+        color: $gray
+        &.error-length
+          color: $red-color
+      .text-addition
+        clear: both
+        font-size: 12px
+        padding-top: 20px
+        color: $gray
+        margin-bottom: 0
+
+    #launchDate
+      ul
+        clear: both
+        width: 301px
+        &:first-child
+          margin-top: 0
+        li
+          margin: 0 4px 4px 0
+          float: left
+          width: 39px
+          border: 1px solid $gray
+          height: 62px
+          text-align: center
+          *
+            cursor: pointer
+          &:last-child
+            margin-right: 0
+          &:hover
+            background-color: $cyan-color
+            span
+              color: $white !important
+          label
+            width: 37px
+            height: 61px
+            padding: 4px
+            span
+              display: block
+              &.month
+                color: $gray
+                font-size: 10px
+                font-weight: lighter
+              &.day
+                color: $cyan-color
+                font-size: 18px
+                font-weight: bold
+              &.weekday
+                color: $cyan-color
+                font-weight: lighter
+                font-size: 10px
+          input
+            display: none
+            &.selected + label
+              background-color: $hover-cyan-lauch-date
+              color: white
+              .month,
+              .day,
+              .weekday
+                color: $white
+
+    #questionnaire
+      .carousel-label
+        color: $black
+        font-size: 14px
+        font-weight: bold
+        padding-bottom: 8px
+        height: 63px
+        display: table-cell
+        vertical-align: bottom
+        .required
+          font-weight: lighter
+          font-style: italic
+      .question-inner
+        margin: 10px 0
+        overflow: hidden
+        button:last-child
+          margin-right: 44px
+          &:before
+            content: '\e076'
+        .flat-btn
+          padding: 10px 15px
+          &:before
+            margin-left: 0
+      // error questionnaire
+      .error-required
+        .carousel-label
+          color: $red-color
+        textarea
+          border: 1px solid $red-color
+          background-color: $white
+      textarea
+        resize: inherit
+        font-size: 14px
+        padding: 5px 10px
+        width: 100%
+        &.error-length
+          background-color: $white
+          border: 1px solid $red-color
+          &:focus
+            border: 1px solid $red-color
+        &.ok-counter
+          border: 1px solid $gray
+          &:focus
+            border: 1px solid $green-color
+
+      .character-count
+        float: left
+        margin-top: 19px
+        width: 120px
+        &.error-length
+          color: $red-color
+      .character-count, .question-num
+        display: block
+        font-size: 14px
+        color: $gray
+      .question-num
+        position: absolute
+        bottom: 18px
+        right: 47px
+      .error-text.required
+        display: block
+        float: left
+        font-style: italic
+        margin: 0
+      .text-addition
+        clear: both
+        font-size: 12px
+        padding-top: 20px
+        color: $gray
+      .flexslider
+        .flex-direction-nav
+          display: none
+        .flex-control-nav.flex-control-paging
+          display: none
+          bottom: -188px
+          text-align: right
+          width: auto
+          right: 0
+          z-index: 10
+          li
+            a
+              background: $gray
+              text-indent: 9999px
+              box-shadow: none
+              &.flex-active, &:hover
+                background: $green-color
+
+
+      #more-examples-questionnaire
+        h5
+          color: $dark-gray-color
+          margin: 0
+          font-size: 14px
+        p
+          margin-bottom: 20px
+
+      button[type=submit].continue
+        margin: -40px 4px 0 0
+
+      .show-dealpreview-mobile
+        margin-top: -39px
+
+  .preview-contract-container
+    position: relative
+    z-index: 1
+    margin-right: 40px
+    border-left: $steps-width solid transparent
+
+    .contract-helper
+      background-color: white
+      padding: 40px
+
+  .mobile-preview-contract-container
+    display: none
+
+  .dealPreview
+    box-sizing: border-box
+    margin: 60px 0 58px 93px
+    width: 745px
+    position: relative
+    #preview
+      position: relative
+    figure
+      background-color: $preview-gray-bg
+      height: 269px
+      overflow: hidden
+      position: relative
+      img
+        position: absolute
+        top: -9999px
+        bottom: -9999px
+        left: -9999px
+        right: -9999px
+        margin: auto
+      img.placeholder
+        border: dashed 1px #b9bbbc
+        padding: 5px
+        background: white
+      > div
+        font-style: italic
+        margin: 100px auto 0
+        width: 80px
+        font-size: 14px
+        text-align: center
+      .tools
+        margin: 0
+        position: absolute
+        bottom: 10px
+        right: 10px
+        text-align: right
+        .delete
+          background-color: rgba($white, .7)
+          border: 1px solid $cyan-color
+          color: $cyan-color
+          font-weight: bold
+          font-size: 13px
+          &[disabled]
+            color: $mid-gray-color
+            border-color: $mid-gray-color
+      .loading-preview
+        background-image: url('../msse_vendors/images/deal_builder/spinner.png')
+        background-repeat: no-repeat
+        height: 33px
+        width: 33px
+        margin: auto
+        &:before
+          content: ''
+          background-image: url('../msse_vendors/images/deal_builder/spinnerdot.gif')
+          background-repeat: no-repeat
+          padding-left: 27px
+          height: 37px
+          float: left
+          width: 32px
+      span
+        padding-top: 10px
+        display: block
+        color: $spinner-green-txt
+
+    .dealPreview-inner
+      background-color: $white
+      box-shadow: 0px 0px 8px $light-gray-color
+      padding: 10px 20px
+      overflow: hidden
+      strong, .changedValue
+        font-family: "Open Sans", "Helvetica Neue", sans-serif
+        font-weight: bold
+      .title-deal-preview
+        background-image: url("../msse_vendors/images/deal_builder/db_dealpreview.png")
+        background-position: center center
+        background-repeat:  no-repeat
+        position: absolute
+        color: $dark-gray-color
+        top: -25px
+        left: 10px
+        width: 100px
+        height: 24px
+        text-indent: -9999px
+      h1
+        line-height: 1.3em
+        letter-spacing: -1px
+        margin: 0
+        font-family: "Open Sans", "Helvetica Neue", sans-serif
+        font-weight: lighter
+        font-size: 35px
+      .deal-subtitle
+        font-family: "Open Sans", "Helvetica Neue", sans-serif
+        font-weight: lighter
+        color: $black-subtitle
+        font-size: 16px
+        margin: 5px 0 0
+      .inner-deal-left
+        float: left
+        padding: 10px 0
+        width: 225px
+        .price-tag-inner
+          span
+            color: $black
+            font-size: 48px
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: bold
+            &.from-price
+              font-size: 12px
+              font-weight: lighter
+              color: $gray-from-price
+              display: block
+              margin-bottom: -12px
+          .btn-buy-big
+            background-image: linear-gradient($btn-light-green, $btn-dark-green)
+            border: 0
+            box-shadow: none !important
+            border-radius: 32px
+            clear: both
+            color: $white
+            cursor: default
+            display: block
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: lighter
+            font-size: 24px
+            line-height: .75em
+            max-width: 220px
+            margin: 0 auto 20px
+            padding: 1em 0
+            position: static !important
+            text-transform: uppercase
+            text-shadow: none !important
+            width: 100%
+            &:focus
+              outline: 0 none
+      .confirm-location span
+        width: auto
+        padding-left: 26px
+        p
+          font-size: 13px
+          line-height: 1.5em
+          padding-bottom: 10px
+
+      #deal_discount
+        border-bottom: 1px solid $gray-line
+        margin-bottom: 20px
+        overflow: hidden
+        padding-bottom: 20px
+        > dl
+          float: left
+          margin: 0 11px 0 0
+          width: 28%
+        dl > dt
+          font-size: 11px
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+        dl > dd
+          clear: both
+          font-size: 17px
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: bold
+          display: block
+          margin: 0
+
+      .confirm-location
+        h5
+          font-size: 12px
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          color: $dark-gray-color
+          background-image: url("../msse_vendors/images/deal_builder/db_icon_location.png")
+          background-repeat: no-repeat
+          padding: 0 0 0 25px
+          height: 20px
+          vertical-align: middle
+
+      .deal-cap
+        padding-top: 20px
+        border-top: 1px solid $gray-line
+        margin-top: 20px
+        h5
+          font-size: 12px
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          color: $dark-gray-color
+          height: 20px
+          vertical-align: middle
+          &:before
+            content: "\e037"
+            font-family: 'Groupon'
+            margin-right: 10px
+            font-size: 20px
+            vertical-align: middle
+            color: $black
+        span
+          margin-left: 30px
+          font-size: 14px
+          display: block
+          p
+            margin: none
+
+      .inner-deal-right
+        float: left
+        width: 460px
+        padding: 19px 0 30px 20px
+        h3
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          color: $black-color
+          font-size: 24px
+          margin: 16px 0 10px
+        p
+          font-size: 14px
+          line-height: 1.3
+          margin-bottom: 0px
+          color: $black
+          font-weight: bold
+          min-height: 35px
+        .fine-print
+          padding: 0px 0px 0px 0px
+          font-size: 14px
+          img
+            width: 460px
+
+          .text-example
+            position: relative
+            height: 33px
+            &:before, &:after
+              content: ''
+              display: block
+              height: 16px
+              position: absolute
+              background-color: $light-paragraph-gray
+            &:before
+              width: 439px
+              top: 0
+              left: 0
+            &:after
+              width: 310px
+              top: 17px
+              left: 0
+        .nutshell-preview
+          min-height: 64px
+          margin-bottom: 30px
+          h3
+            line-height: 14px
+          .text-example
+            position: relative
+            height: 33px
+            &:before, &:after
+              content: ''
+              display: block
+              height: 16px
+              position: absolute
+              background-color: $light-paragraph-green
+            &:before
+              width: 439px
+              top: 0
+              left: 0
+            &:after
+              width: 310px
+              top: 17px
+              left: 0
+          &.pending .text-example:before,
+          &.pending .text-example:after
+            background-color: $light-paragraph-gray
+            color: $light-paragraph-gray
+          &.closed p
+            font-weight: normal
+
+      #dealpreview-bottom-inner
+        clear: both
+        h3
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          color: $black-color
+          font-size: 24px
+          margin: 30px 0 10px
+        p
+          font-size: 14px
+          line-height: 1.3
+          margin-bottom: 0px
+        ul
+          font-size: 14px
+        .left-column
+          float: left
+          padding: 0 35px 10px 10px
+          width: 65%
+          div:nth-child(1):before
+            content: ''
+            border-top: 1px solid $gray-line
+            width: 168%
+            display: block
+          .writeUp
+            h1, h2, h3, h4, h5, h6
+              font-family: "Open Sans", "Helvetica Neue", sans-serif
+              font-weight: lighter
+              color: $black-color
+              font-size: 24px
+              margin: 30px 0 10px
+          // QUESTIONS Q&A
+          .questionnaire-content
+            h5
+              font-size: 14px
+            .question
+              margin-bottom: 20px
+              opacity: 0.3
+              &.current
+                opacity: 1
+                &.unanswered
+                  opacity: 1
+                  p
+                    background-position: 0 0
+                p
+                  font-weight: bold
+                  background-image: none
+              &.unanswered
+                p
+                  background-image: url("../msse_vendors/images/rube_goldberg/rg_paragraph.png")
+                  background-position: 0 -67px
+                  height: 67px
+              p
+                display: block
+                background-color: transparent
+                background-repeat: no-repeat
+            &.pending
+              opacity: 1
+              h3
+                color: $gray
+            &.completed
+              h3
+                color: $gray
+            &.open.completed
+              h3
+                color: $black
+
+        .right-column
+          width: 35%
+          float: right
+          div:nth-child(1):before
+            content: ''
+            border-top: 1px solid $gray-line
+            display: block
+            padding-top: 20px
+          .static-map
+            height: 214px
+            margin: auto
+            width: 214px
+          .confirm-location
+            width: 82%
+            margin: auto
+            h5
+              font-weight: lighter
+              color: $dark-gray-color
+              height: 20px
+              vertical-align: middle
+            div
+              padding-left: 33px
+              position: relative
+              margin-bottom: 20px
+              p
+                font-size: 12px
+                line-height: 1.5em
+                width: auto
+              .marker:before
+                color: $green-color
+                font-size: 35px
+                position: absolute
+                top: 0
+                left: -5px
+              .marker-address:before
+                content: '\e027'
+              .marker-number:before
+                content: '\e08b'
+              .market-counter
+                display: inline
+                padding: 0
+                position: absolute
+                top: 3px
+                left: 0
+                text-align: center
+                color: $white
+                width: 24px
+
+.show-dealpreview-mobile
+  &:hover
+    text-decoration: none
+  &:before
+    content: "\e06f"
+    font-family: 'Groupon'
+    font-size: 28px
+    height: 32px
+    width: 32px
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+.show-dealpreview-mobile,
+#preview-modal.show-modal
+  display: none
+
+.contract-wrapper
+  position: absolute
+  display: none
+
+  &.visible
+    opacity: 1
+    overflow-y: scroll
+    display: block
+    /* top msut be dynamically calculated to be equal to what it was before bottom: 0 was set */
+    bottom: 0
+
+.overlay-visible
+  .contract-inner
+    .contract-body
+      background-color: $contract-overlay-background-color
+      #contract-overlay
+        border: 1px solid $dark-gray-color
+        opacity: 1
+        overflow: hidden
+        button[type="submit"]
+          margin: 0 auto
+          display: block
+          float: none
+    .paragraph-contract
+      opacity: 0.5
+
+.contract-inner
+  margin: 52px 0 0 39px
+  max-width: 1024px
+  position: relative
+  > div
+    background-color: $white
+    padding: 20px 30px
+  .contract-head
+    background-color: $green-color !important
+    height: 5px
+    padding: 0
+    width: 100%
+    span
+      position: relative
+      margin: auto
+      display: block
+      top: -28px
+      width: 190px
+  .contract-body
+    padding-top: 75px
+
+    transition: background-color 0.3s ease-out
+
+    #contract-overlay
+      button[type="submit"]
+        display: none
+      padding: 20px
+      margin: 0 auto 20px auto
+      width: 70%
+      text-align: center
+      background-color: white
+      border: 1px solid transparent
+      opacity: 0.2
+      transition: border-color 0.3s ease-out
+
+// woohoo page
+.woohoo-inner
+  background-color: $white
+  margin: auto
+  width: 980px
+  .woohoo-heading
+    background-color: $dark-cyan-color
+    background-image: url("../msse_vendors/images/deal_builder/db_bg_woohoo.png")
+    background-repeat: no-repeat
+    overflow: hidden
+    padding: 17px 0 0 55px
+    // when we'll have the real images we can't show this code
+    h1, small
+      text-indent: -9999em
+      color: $white
+      clear: both
+    h1
+      background-image: url("../msse_vendors/images/deal_builder/db_title_woohoo.png")
+      background-repeat: no-repeat
+      float: left
+      padding: 28px
+      width: 401px
+      background-position: -3px 19px
+      height: 122px
+    .cat-space-desktop
+      display: block
+      float: right
+      padding-top: 13px
+      height: 170px
+      width: auto
+  .woohoo-body
+    padding: 0 20px
+    .details-last-step
+      top-offset = 13px
+      background-color: $white
+      opacity: 0.8
+      position: relative
+      padding: top-offset 20px 20px
+      width: 910px
+      height: auto
+      margin: -(top-offset) auto 5px
+      border: 1px solid $soft-gray-color
+      box-shadow: 7px 2px 6px -6px $soft-gray-color
+      border-bottom: none
+      li
+        float: left
+        list-style: none
+        text-align: center
+        width: 33%
+        padding: 25px 0
+        margin-top: 19px
+        border-right: 1px dashed $gray
+        border-left: 1px dashed $gray
+        &:first-child
+          border: none
+          margin: 0
+        &:last-child
+          border: none
+        .date
+          font-size: 24px
+          display: block !important
+          color: $cyan-color
+          text-align: middle
+          font-weight: lighter
+      .details-last-title
+        clear: both
+        color: $black
+        font-size: 30px
+        text-align: center
+        margin: auto
+        width: 730px
+
+  // nav in woohoo page
+  nav.woohoo-steps
+    clear: both
+    width: 870px
+    padding-bottom: 60px
+    margin: auto
+    .form-label
+      margin: 0 0 8px
+    .fill-group
+      overflow: auto
+      .fill
+        margin-bottom: 0
+    h6
+      margin-bottom: 15px
+      color: $black-color
+
+    .fill-group
+      margin-top: 0
+    .fill-group ~ .fill-group // For all but the first
+      margin-top: 30px
+
+    fieldset
+      padding: 0
+      // removing gig's stupid default styling
+      > div
+        margin-bottom: 0
+
+    fieldset.taxes-inner .fill-group
+      margin-bottom: 0
+
+    .hide
+      display: none
+
+    .loading
+      line-height: 37px
+      height: 37px
+      background-image: url('../msse_vendors/images/deal_builder/spinner.png')
+      background-repeat: no-repeat
+      display: none
+      float: right
+      color: $green-color
+      font-style: italic
+      margin: 3px 0 0 5px
+      &:before
+        content: ''
+        background-image: url('../msse_vendors/images/deal_builder/spinnerdot.gif')
+        background-repeat: no-repeat
+        padding: 0 5px 0 27px
+        height: 37px
+        width: 6px
+        float: left
+      .still-loading-message
+        display: none
+      .loading-message
+        font-size: 14px
+
+    .bankinfo-inner
+      h6 , .help-icon
+        float: none
+      .tipsy.help-icon
+        padding: 0 !important
+        margin: 3px 0 0 5px
+        float: left
+        height: 14px
+        width: 14px
+        background-position: 0
+
+    .insurance-inner
+      .explanation
+        // Note: Margin-top here is meant to be 20px (by the comps), but due to the baseline of the font hanging way day, we need to knock around 5px off :(
+        margin: 15px 0 0 $woohoo-step-number-width
+        font-size: 14px
+        color: $light-gray-color
+        font-style: italic
+
+      label
+        padding-left: $woohoo-step-number-width
+        position: relative
+        font-size: 14px
+
+      .input-wrapper
+        position: absolute
+        left: 0
+
+    .accordion-group.closed
+      .accordion-heading
+        a
+          cursor: pointer
+      .accordion-heading.inactive
+        a
+          cursor: default
+    .accordion-group.completed
+      .accordion-heading
+          background-image: url("../msse_vendors/images/deal_builder/ok_icon.png")
+          background-repeat: no-repeat
+    .accordion-group
+      border-top: 1px solid $mid-gray-color
+      border-bottom: 1px solid $mid-gray-color
+      & ~ .accordion-group
+        border-top: none // undo the border-top for all but the first
+      background-color: $soft-gray-color !important
+      overflow: hidden
+      .accordion-heading
+        border-top: 1px solid $soft-gray-color
+        &.completed
+          background-image: url("../msse_vendors/images/deal_builder/ok_icon.png")
+          background-position: 95% 22px !important
+          background-repeat: no-repeat
+        &.completed-active
+          background-image: url("../msse_vendors/images/deal_builder/ok_icon.png")
+          background-position: 95% 22px !important
+          background-repeat: no-repeat
+          a
+            cursor: pointer
+        a
+          padding: 20px
+          .step-number
+            display: inline-block
+            width: $woohoo-step-number-width
+
+      .accordion-body
+        background-color: white
+        padding: 0 20px
+        overflow: hidden
+        .taxes-label
+          margin-bottom: 25px
+        .actions
+          clear: both
+          float: left
+          padding: 30px 0
+          margin: 0
+        img
+          margin: auto
+          width: 423px
+          display: block
+        .steps-description
+          padding-top: 5px
+          font-size: 14px
+        .verified-business
+          .fill
+            float: left
+            &.verified
+              float: none
+              input
+                float: left !important
+                margin-right: 5px
+          .status
+            font-style: italic
+            font-size: 14px
+            color: $light-gray-color
+            font-weight: lighter
+            background-image: url('../msse_vendors/images/deal_builder/db_check_verified.png')
+            background-repeat: no-repeat
+            background-position: center left
+            padding-left: 16px
+        .details-last-step
+          overflow: hidden
+          border: 0
+          width: auto
+          ul
+            float: none
+
+    .radiobutton
+      margin: 0 0 15px 0
+    .radiobutton:last-child
+      margin-bottom: 25px
+
+.woohoo-inner .video-box
+  width: 100%
+  margin: 20px auto 0
+  .video-content
+    height: 0
+    width: 100%
+    max-width: 100%
+    padding-top: 56.25%
+    position: relative
+    iframe
+      position: absolute
+      height: 100%
+      width: 100%
+      top: 0px
+      left: 0px
+
+.woohoo-inner .share-inner
+  font-size: 14px
+  margin: 20px auto 40px
+  width: 535px
+  font-style: italic
+  .share-url
+    display: none
+  input
+    float: right
+    width: 224px
+    margin-top: -7px
+    padding-left: 29px
+    background-image: url('../msse_vendors/images/deal_builder/db_icon_link.png')
+    background-position: 6px center
+    background-repeat: no-repeat
+  span
+    display: block
+    clear: both
+    text-align: right
+    font-style: italic
+    padding-top: 5px
+
+.details-last-step
+  h2
+    text-align: center
+    line-height: 30px
+    font-size: 30px
+    color: $black
+
+// mc woohoo page
+.mc-woohoo-inner
+  padding: 0 70px 30px
+
+// cupcake page
+.cupcake-inner
+  position: relative
+  top: 75px
+  background-color: $white
+  width: 980px
+  margin: auto
+  .cupcake-heading
+    background-image: url("../msse_vendors/images/deal_builder/db_grid_cupcake.png")
+    background-repeat: no-repeat
+    background-color: $dark-cyan-color
+    overflow: hidden
+    padding: 17px 0 0 55px
+    h1, small
+      text-indent: -9999em
+      color: $white
+      clear: both
+      display: block
+    h1
+      background-image: url("../msse_vendors/images/deal_builder/db_cupcake_logo.png")
+      background-repeat: no-repeat
+      float: left
+      margin-top: 40px
+      width: 430px
+      height: 57px
+    .deal-head
+      display: block
+      float: right
+      padding-top: 13px
+      width: auto
+    .deal-head-desktop
+      display: block
+      float: right
+      padding-top: 13px
+      width: auto
+    .deal-head-mobile
+      display: none
+
+  .cupcake-hero
+    background-image: url("../msse_vendors/images/deal_builder/db_cupcake_hero@2x.png")
+    background-size: 345px 170px
+    background-repeat: no-repeat
+    display: block
+    height: 170px
+    width: 345px
+    float: right
+
+  .cupcake-body
+    padding: 0
+    .details-last-step
+      top-offset = 13px
+      background-color: $white
+      opacity: 0.8
+      position: relative
+      padding: top-offset 20px 0
+      width: 910px
+      height: 106px
+      margin: -(top-offset) auto 5px
+      border: 1px solid $soft-gray-color
+      box-shadow: 7px 2px 6px -6px $soft-gray-color
+      border-bottom: none
+      h2
+        padding-top: 45px
+        margin-bottom: -15px
+    .subtitle
+      text-align: center
+      margin: 20px auto !important
+      padding: 20px 0
+      font-size: 14px !important
+      width: 600px
+      color: $dark-gray-color
+      font-size: 18px
+      font-style: italic
+    .paragraph
+      text-align: center
+      font-style: italic
+      color: $dark-gray-color
+      margin-bottom: 0
+
+  .cupcake-gallery
+    max-width: 884px
+    min-height: 260px
+    margin: 0 auto 25px
+    ol
+      display: none
+    h5
+      font-family: "Open Sans", "Helvetica Neue", sans-serif
+      font-weight: bold
+      text-align: center
+      font-size: 14px
+      margin: 0 6px 18px
+      min-height: 38px
+    span
+      position: relative
+      overflow: hidden
+      margin: 8px
+      display: block
+      max-height: 119px
+      box-sizing: border-box
+      border: 1px solid $gray
+    .btn
+      float: none
+      border: none
+      font-size: 14px
+      font-weight: bold
+      position: relative
+      bottom: 0
+      margin: 0
+      left: 0
+      right: 0
+      width: 100%
+      white-space: nowrap
+    p
+      color: $dark-gray-color
+      text-align: center
+      font-style: italic
+      margin-bottom: 26px
+    .flexslider
+      margin-bottom: 0
+      border: none
+    .slides li div
+      background-color: $gray-carousel
+      box-sizing: border-box
+      position: relative
+      border: 1px solid #d5d5d5
+      cursor: pointer
+      &:hover
+        border: 1px solid $green-color
+      span img
+        position: relative
+        min-width: 194px
+        min-height: 119px
+  .carousel li
+    margin: 0 0 0 20px
+    &:first-child
+      margin-left: 0
+
+  .how-works
+    background-image: url("../msse_vendors/images/deal_builder/db_bg_gray_cupcake.png")
+    box-shadow: inset 0 10px 10px $soft-gray-color
+    border-top: 1px solid $light-gray-color
+    margin-top: 55px
+    overflow: hidden
+    height: auto
+    h2
+      text-align: center
+    h4
+      font-weight: lighter
+    div
+      width: 280px
+      float: left
+      padding: 10px
+      text-align: center
+    div:first-of-type
+      margin-left: 60px
+    div:last-of-type
+      margin-right: 60px
+    p
+      clear: both
+      color: $dark-gray-color
+    .build
+      background-image: url("../msse_vendors/images/deal_builder/GW_Howitworks-1.png")
+      background-repeat: no-repeat
+      display: block
+      padding: 36px
+      margin: 0 auto 10px
+      width: 64px
+    .enjoy
+      background-image: url("../msse_vendors/images/deal_builder/GW_Howitworks-2.png")
+      background-repeat: no-repeat
+      display: block
+      padding: 36px
+      margin: 0 auto 10px
+      width: 75px
+    .getpaid
+      background-image: url("../msse_vendors/images/deal_builder/GW_Howitworks-3.png")
+      background-repeat: no-repeat
+      display: block
+      padding: 36px
+      margin: 0 auto 10px
+      width: 66px
+
+.clear-both
+  clear: both
+
+.app-loading
+  opacity: 1
+  -moz-transition: opacity .25s ease-in-out
+  -webkit-transition: opacity .25s ease-in-out
+  transition: opacity .25s ease-in-out;
+  position: absolute
+  text-align: center
+  margin: auto
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  height: 2em
+  width: 20%
+  background-image: url('../msse_vendors/images/deal_builder/spinner.png')
+  background-repeat: no-repeat
+  background-position: center top
+  color: $spinner-green-txt
+  font-size: 14px
+  font-style: italic
+  padding-top: 37px
+
+  &:before
+    content: ''
+    background-image: url('../msse_vendors/images/deal_builder/spinnerdot.gif')
+    background-repeat: no-repeat
+    display: block
+    position: relative
+    margin: -37px auto 0 auto
+    height: 37px
+    width: 37px
+
+// NEW CONTRACT STYLES
+#contract-modal
+  display: none
+.overlay-visible
+  &.contract-body
+    background-color: $contract-overlay-background-color !important
+  h3
+    span
+      opacity: 0.3
+
+.agreement-inner
+  width: 100%
+  font-size: 14px
+  color: $dark-gray-color
+  text-align: left
+  background-color: $white
+  .contract-regular
+    font-family: $text
+    font-size: 13px
+    line-height: 139%
+    color: $black-color
+  .agreement-left-column
+    vertical-align: top
+    padding-top: 20px
+    padding-left: 0px
+    width: 30px
+    float: left
+  .agreement-text
+    padding-top: 30px
+    padding-left: 0px
+    padding-bottom: 30px
+    padding-right: 20px
+    float: left
+    width: 585px
+    p
+      font: "Open Sans"
+      font-size: 13px
+      color: black
+      line-height: 139%
+      text-align: left
+      a
+        float: none
+        display: inline
+  .agreement-btn
+    padding-top: 30px
+    float: left
+    .tipsy
+      padding: 0
+    .tooltip-wrapper
+      height: 40px
+      width: 130px
+.tip-format .tipsy-inner
+  border-color: $green-border
+  box-shadow: 0px 2px
+  font: OpenSans
+  font-size: 14px
+  color: $green-border
+  line-height: 138%
+  padding: 20px
+
+.offer-agreement-footer
+  height: 150px
+  width: 745px
+  margin-left: auto
+  margin-right: auto
+.offer-footer
+  padding-top: 0
+  height: 150px
+  padding-right: 60px
+
+.rg-offers-contract
+  font-size: 14px
+  color: $dark-gray-color
+  text-align: left
+  border-top: 1px solid $gray-border
+  h2
+    margin: 0 0 20px
+  .table-image
+     background-repeat: no-repeat
+     background-position: center center
+     display: inline-block
+     padding: 5px
+     position: relative
+     color: $dark-gray-color
+     width: 40px
+     height: 40px
+    .smile-icon
+      background-image: url("../msse_vendors/images/offers/smile.png")
+    .groupon-icon
+      background-image: url("../msse_vendors/images/offers/groupon.png")
+    .chart-icon
+      background-image: url("../msse_vendors/images/offers/chart.png")
+    .hide-regular
+      display none
+  .calendar-icon
+    background-image: url("../msse_vendors/images/offers/calendar.png")
+    background-repeat: no-repeat
+    background-position: center center
+    display: inline-block
+    padding: 5px
+    position: relative
+    color: $dark-gray-color
+    top: 5px
+    width: 100%
+    height: 40px
+  .visual-table
+    align-content: center
+    text-align: center
+    td
+      text-align: left
+      vertical-align: middle
+      padding-bottom: 20px
+      padding-left: 20px
+      padding-top: 20px
+      padding-right: 20px
+      border-bottom 1px solid $gray-border
+      height 55px
+    p
+      margin-bottom: 0px
+    .table-top-row
+      border-top 1px solid $gray-border
+    .table-left-column
+      border-left 1px solid $gray-border
+    .table-right-column
+      border-right 1px solid $gray-border
+  .space-bottom
+    padding-bottom: 10px
+  .space-top
+    padding-top: 10px
+  .contract-inner
+    margin: 0
+    a
+      color: $cyan-color
+    .contract-terms
+      h6
+        margin-bottom 2px
+    ul
+      padding-left: 0px
+    table
+      display: block
+      max-width: 100%
+      width: 100%
+      margin-bottom: 20px
+      box-sizing: border-box
+      &.table
+        th
+          vertical-align: bottom
+          font-size: 12px
+          border: none
+        td
+          border-top: 1px solid $soft-gray-color
+          padding: 8px
+          vertical-align: middle
+      th, td
+        text-align: left
+        vertical-align: middle
+      .contract-bold
+        white-space: nowrap
+    .cont-header
+      img
+        width: 200px
+        height: 50px
+      h1
+        font-weight: lighter
+        font-size: 21px
+        margin: 25px
+        color: $black-color
+        text-align: center
+      h2
+        margin: 0 0 25px 0
+        color: $dark-gray-color
+        font-size: 14px
+        text-align: center
+    h3
+      font-size: 21px
+      color: $black-color
+      font-weight: lighter
+      margin: 20px 0 25px
+      text-align: center
+      display: block
+    .highlight-description
+      color: $black-color
+    p.highlight-description
+      margin: 0 0 25px 0
+      &:last-child
+        margin-bottom: 40px
+  .contract-bold
+    font-family: $text
+    font-weight: 600
+    font-size: 16px
+    line-height: 22px
+    color: $black-color
+  .contract-regular
+    font-family: $text
+    font-size: 13px
+    line-height: 139%
+    color: $black-color
+
+.rg-contract
+  font-size: 14px
+  color: $dark-gray-color
+  text-align: left
+  .contract-inner
+    .contract-body
+      .contract-logo
+        height: 33px
+        text-align: center
+        display: block
+        &:before
+          content: '\e073'
+          font-family: 'Groupon'
+          color: $green-color
+          font-size: 47px
+          font-smoothing: antialiased
+      .tab-agreement
+        background-image: url("../msse_vendors/images/rube_goldberg/db_agreement.png")
+        background-position: center center
+        background-repeat: no-repeat
+        position: absolute
+        color: $dark-gray-color
+        top: -23px
+        left: 10px
+        width: 100px
+        height: 24px
+        text-indent: -9999px
+      a
+        color: $cyan-color
+      ul
+        padding-left: 0px
+      li
+        list-style: none
+      table
+        display: block
+        max-width: 100%
+        width: 100%
+        margin-bottom: 20px
+        box-sizing: border-box
+        &.table
+          th
+            vertical-align: bottom
+            font-size: 12px
+            border: none
+          td
+            border-top: 1px solid $soft-gray-color
+            padding: 8px
+            vertical-align: middle
+        th, td
+          text-align: center
+      .cont-header
+        img
+          width: 200px
+          height: 50px
+        h1
+          font-weight: lighter
+          font-size: 21px
+          margin: 25px 0 0 0
+          color: $black-color
+          text-align: center
+        h2
+          margin: 0 0 25px
+          color: $dark-gray-color
+          font-size: 14px
+          text-align: center
+      h3
+        font-size: 21px
+        color: $black-color
+        font-weight: lighter
+        margin: 20px 0 25px
+        text-align: center
+        display: block
+      .contract-business img
+        width: 400px
+        margin: 20px auto
+      .highlight-description
+        color: $black-color
+      p.highlight-description
+        margin: 0 0 25px 0
+        &:last-child
+          margin-bottom: 40px
+      .contract-terms p
+        margin: 0 0 20px 0
+      .contract-terms h6
+        font-size: 12px
+        font-family: $text
+        font-weight: lighter
+        color $dark-gray-color
+
+      .signature
+        padding: 25px 0
+        p
+          margin-bottom: 0
+          &:first-child
+            color: $black-color
+        div
+          background-color: $white
+          border: 2px solid lighten($green-color, 35)
+          margin: 8px 0 20px
+          max-width: 332px
+          text-align: left
+          height: 74px
+          padding: 0
+          span
+            padding: 30px 10px 10px
+            border-bottom: 1px solid $light-gray-color
+            padding-bottom: 5px
+            font-style: italic
+            text-align: center
+            font-family: "Cedarville Cursive"
+            font-size: 30px
+            height: 55px
+            width: 300px
+            margin: 0 auto
+            line-height: 0.5
+            display: block
+            color: $black-color
+            &:before
+              content: "x"
+              color: $light-gray-color
+              padding-right: 10px
+              font-size: 20px
+              float: left
+              font-family: $text
+              margin-top: 5px
+
+.deal-highlights, .s3-agreement-info
+  h5
+    font-size: 12px
+    font-family: "Open Sans", "Helvetica Neue", sans-serif
+    font-weight: lighter
+    color: $dark-gray-color
+    background-repeat: no-repeat
+    height: 20px
+    vertical-align: middle
+
+.deal-highlights
+  .title-container
+    display: inline-flex
+  padding-left: 10px
+  padding-bottom: 35px
+  width: 685px
+  h3
+    width: 341px
+    height: 33px
+  table
+    margin-top: 10px
+    border-collapse: collapse
+    border-color: #BBBBBB
+    div.plede-values
+      display: flex
+      margin-bottom: 5px
+      span.first
+        width: 60%
+        text-align: right
+    td
+      span.subtitles
+        margin-left: 10px
+      span.center-aligned
+        margin-left: 1px
+      span.left-aligned
+        margin-left: 41px
+      text-align: center
+      width: 229px
+    width: 100%
+    thead
+      th
+        width: 229px
+        border: none
+        border-right: 1px solid
+        border-color: #BBBBBB
+        text-align: center
+        font-size: x-large
+        color: #82b548
+      th:last-child
+        border-right: none
+
+// MOBILE CONTRACT CSS
+.s3-agreement-info
+  .agreements-info-header
+    color: #ccc
+    font-size: 24px
+    margin-botton: 10px
+    line-height: 1.5
+  .agreements-info-subtitle
+    font-size: 14px
+    margin: 10px 0px 10px 0px
+  #previewTitle
+    font-size: 18px
+    font-weight: bold
+    color: black
+    line-height: 21px
+    margin-bottom: 10px
+  .agreement-highlights
+    .mobile-size
+      width: 52px !important
+      height: 32px !important
+      margin-left: 5px
+  table.agreement-highlights
+    width: 100%
+    tr
+      height: 100px
+    td
+      vertical-align: middle
+      text-align: center
+  h6
+    color: #A6A2A2 !important
+    margin: 20px 0px 5px 0px
+    line-height: 1.375
+
+.agreement-message
+  line-height: 20px
+
+#agreement_checkbox
+  margin-top: 4px
+
+.calendar-icon
+  background-image: url("../msse_vendors/images/s3_contract/calendar.png")
+  background-repeat: no-repeat
+  background-position: center center
+  display: inline-block
+  padding: 5px
+  position: relative
+  color: $dark-gray-color
+  top: 5px
+  width: 32px
+  height: 32px
+
+.user-icon
+  background-image: url("../msse_vendors/images/s3_contract/user.png")
+  background-repeat: no-repeat
+  background-position: center center
+  display: inline-block
+  padding: 5px
+  position: relative
+  color: $dark-gray-color
+  top: 5px
+  width: 32px
+  height: 32px
+
+.money-icon
+  background-image: url("../msse_vendors/images/s3_contract/money.png")
+  background-repeat: no-repeat
+  background-position: center center
+  display: inline-block
+  padding: 5px
+  position: relative
+  color: $dark-gray-color
+  top: 5px
+  width: 32px
+  height: 32px
+
+.deal-highlights
+  .highlights-footer
+    display: inline-flex
+    .payment
+      width: 206px
+      font-size: 13px
+      line-height: 1.5
+    .campaign-length, .promotional-value
+      width: 206px
+      margin-left: 20px
+      font-size: 13px
+      line-height: 1.5
+
+  .deal-highlights-header
+    color: #ccc
+
+  font-size: 14px
+
+#agreement_checkbox
+  float: left
+
+// RUBE WOOHOO page
+#rg-woohoo-wrapper
+  #steps
+    opacity: 0.6
+    .accordion-group.closed .accordion-heading a
+      cursor: default
+  .woohoo-container
+    position: relative
+    z-index: 1
+    margin-right: 40px
+    border-left: 360px solid transparent
+    > section
+      box-sizing: border-box
+      margin: 30px 0 58px 55px
+      width: 745px
+      position: relative
+      .new-woohoo
+        background-color: $white
+        box-shadow: 0px 0px 8px $light-gray-color
+        width: 800px
+        margin: auto
+        padding: 30px 80px 40px
+        .spaceship-kitty
+          background-image: url("../msse_vendors/images/rube_goldberg/rg_spaceshipkitty.png")
+          width: 206px
+          height: 137px
+          display: block
+          position: absolute
+          right: -109px
+          bottom: -49px
+        h1
+          color: $green-color
+          font-size: 30px
+          margin-bottom: 15px
+          font-weight: normal
+          text-align: center
+        fieldset
+          padding: 0
+          text-align: center
+          h2
+            font-size: 20px
+            font-weight: normal
+            margin-bottom: 30px
+          p
+            font-size: 16px
+            font-weight: lighter
+            color: $black-subtitle
+            margin-bottom: 25px
+            &.error-text
+              clear: both
+              display: none
+              font-size: 12px
+              color: $red-color
+              padding-top: 5px
+              text-align: left
+
+          div
+            width: 300px
+            margin: 20px auto
+            a
+              margin-bottom: 40px
+              display: block
+              font-size: 14px
+            label
+              text-align: left
+              margin-bottom: 5px
+            input
+              width: 300px
+            span
+              position: relative
+              a
+                color: red
+                font-size: 11px
+                right: 10px
+                top: 4px
+                position: absolute
+                color: $show-gray
+                text-decoration: none
+            button[type='submit']
+              width: 100%
+              margin-bottom: 20px
+              text-align: center
+        .options-woohoo
+          border-top: 1px solid $gray
+          padding: 10px 0 0 60px
+          overflow: hidden
+          ul
+            text-align: center
+          li
+            list-style: none
+            color: $gray
+            font-size: 14px
+            display: inline-block
+            padding: 0 10px
+            &:nth-child(2)
+              border-left: 1px solid $gray
+              border-right: 1px solid $gray
+
+.center-margin
+  margin-right auto !important
+  margin-left auto !important
+
+.clear-border
+  border 0 !important
+
+.clear-padding-left
+  padding-left 0
+
+//NUTSHELL Modal
+#more-examples-nutshell .examples-list
+      li
+        margin-bottom: 15px
+
+#habla_window_div
+  left:  auto!important
+  right: 147px !important
+  bottom: 0px!important
+  z-index: 100

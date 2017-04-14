@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="calc.css">
+	<script type="text/javascript" src="calc.js"></script>
+</head>
+<body>
+	<div id="calc">
+		<div class="calc-box">
+			<div class="calc-display">
+				<div class="calc-output">0</div>
+				<input type="text" class="calc-input">
+			</div>
+			<div class="calc-body">
+				<div class="calc-nubers">
+					<button>7</button>
+					<button>8</button>
+					<button>9</button>
+					<button>4</button>
+					<button>5</button>
+					<button>6</button>
+					<button>1</button>
+					<button>2</button>
+					<button>3</button>
+					<button>c</button>
+					<button>0</button>
+					<button>.</button>
+				</div>
+				<div class="calc-actions">
+					<button>+</button>
+					<button>-</button>
+				</div>
+			</div>
+			<div class="calc-footer">
+				<button class="calc-result">=</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="calc2"></div>
+	<script type="text/javascript">
+		var calcFunctions = {
+			'+': {
+				'priority': 1,
+				'content': '+',
+				'action': function(a, b){
+					return a + b;
+				}
+			},
+			'-': {
+				'priority': 1,
+				'content': '-',
+				'action': function(a, b){
+					return a - b;
+				}
+			},
+			'*': {
+				'priority': 0,
+				'content': '*',
+				'action': function(a, b){
+					return a * b;
+				}
+			}
+		};
+		var numbers = [];
+		var calcOperators = [];
+
+		function createCalc(id){
+
+			var calcBox = new Elem('div');
+			calcBox.addClass('calc-box');
+			
+			var calcDisplay = new Elem('div');
+			calcDisplay.addClass('calc-display');
+			
+			calcDisplay
+				.addChild('div')
+				.addClass('calc-out')
+				.addContent(0);
+			calcDisplay
+				.addChild('input')
+				.addClass('calc-input');
+			
+			calcDisplay.appendTo(calcBox.el);
+			
+			var calcBody = new Elem('div');
+			calcBody.addClass('calc-body');
+			
+			var buttons = [7,8,9,4,5,6,1,2,3,'c', 0, '.'];
+			var numBox = calcBody.addChild('div').addClass('calc-nubers')
+			for(var i = 0; i < buttons.length; i++){
+				numBox
+					.addChild('button')
+					.addContent(buttons[i])
+					.setAttribute('data-number', buttons[i]);
+			}
+
+			var calcActions = new Elem('div');
+			calcActions.addClass('calc-actions');
+			for(var prop in calcFunctions){
+				calcActions
+					.addChild('button')
+					.setAttribute('data-action', prop)
+					.addContent(calcFunctions[prop].content)
+			}
+			calcActions.appendTo(calcBody.el);
+			calcBody.appendTo(calcBox.el);
+			
+ 	 		calcBox
+				.addChild('div')
+				.addClass('calc-footer')
+				.addChild('button')
+				.addClass('calc-result')
+				.addContent('=')
+				.setAttribute('data-action', 'calcThis');
+
+ 	  		document.getElementById(id).appendChild(calcBox.el);
+
+ 	  		calcBox.el.addEventListener('click', calcHandler);
+		}
+		
+		function calcHandler(e){
+			var calc = document.getElementById('calc2');
+			var dispInp = calc.getElementsByClassName('calc-input')[0];
+			var dispOut = calc.getElementsByClassName('calc-out')[0];
+			if(e.target.tagName == 'BUTTON'){
+				if(e.target.dataset.number !== undefined){
+					if(e.target.dataset.number == 'c'){
+						dispInp.value = '';	
+					}else{
+						dispInp.value += e.target.dataset.number;
+					}
+				}else if(e.target.dataset.action !== undefined && e.target.dataset.action != 'calcThis'){
+					if(dispOut.innerHTML == '0'){
+						dispOut.innerHTML = '';
+					}
+					dispOut.innerHTML += dispInp.value + e.target.innerHTML;
+					
+					numbers.push(parseFloat(dispInp.value));
+					calcOperators.push(e.target.dataset.action);
+					
+					dispInp.value = '';
+				}else if(e.target.dataset.action == 'calcThis'){
+					var p = 0;
+					for(var i = 0; i < calcOperators.length; i++){
+						if(calcFunctions[calcOperators[i]].priority == p){
+							var a = numbers[i];
+							var b = numbers[i+1];
+							var result = calcFunctions[calcOperators[i]].action(a, b);
+							numbers = numbers.splice(i, 2, result);
+							calcOperators = calcOperators.splice(i, 1);
+							continue;
+						}
+						p++;
+					}
+
+					dispOut.innerHTML = numbers[0];
+				}
+			}
+		}
+
+		function Elem(tag){
+			this.el = document.createElement(tag);
+			this.children = [];
+			this.addClass = function(classes){
+				if(typeof classes == 'string'){
+					this.el.classList.add(classes);
+				}else{
+					for(var i = 0; i < classes.length; i++){
+						this.el.classList.add(classes[i]);
+					}
+				}
+				return this;
+			}
+
+			this.setAttribute = function(attrName, value){
+				this.el.setAttribute(attrName, value);
+				return this;
+			}
+
+			this.appendTo = function(parent){
+				parent.appendChild(this.el);
+				return this;
+			}
+
+			this.addChild = function(tag){
+				var child = new Elem(tag);
+				this.children.push(child);
+				this.el.appendChild(child.el);
+				return child;
+			}
+
+			this.addContent = function(content){
+				this.el.innerHTML = content;
+				return this;
+			}
+		}
+	</script>
+</body>
+</html>

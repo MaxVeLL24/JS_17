@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .alert {
+            padding: 15px;
+            border: 1px solid green;
+            border-radius: 5px;
+            color: yellow;
+            background-color: #3984ff;
+        }
+
+        #msg {
+            width: 200px;
+            background-color: #3984ff;
+
+        }
+    </style>
+</head>
+<body>
+<button onclick="addsuccessMsg('Hello')">Click me</button>
+<div id="msg"></div>
+<ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    var li = document.createElement('li');
+    li.innerHTML = '2';
+    var ul = document.getElementsByTagName('ul');
+    ul[0].insertBefore(li,ul[0].children[2])
+
+</script>
+<script src="js.js" defer></script>
+</body>
+</html>

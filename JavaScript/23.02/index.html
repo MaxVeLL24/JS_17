@@ -1,0 +1,123 @@
+NikitaUa (20:08):
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+ <input  type="text">
+ <script>
+ i = document.getElementsByTagName("input")[0];
+ // i.addEventListener("keypress",fun);
+ //  function fun(event){
+ //    a = String.fromCharCode(event.keyCode);
+ //    console.log(a);
+ //    if(isNaN(a)){
+ //      event.preventDefault();
+ //      return false;
+ //    }
+ //  }
+
+   i.onkeypress =  function (event){
+    a = String.fromCharCode(event.keyCode);
+    console.log(a);
+    if(isNaN(a)){
+      // event.preventDefault();
+      return false;
+    }
+  }
+ </script>
+</body>
+</html>
+osman-ThinkPad-E460 (21:03):
+   function aaction() {
+        alert('hello');
+    }
+    keyPressed(aaction, "Q".charCodeAt(), 'R'.charCodeAt());
+
+    function keyPressed(func) {
+        var codes = [].slice.call(arguments, 1);
+        var pressed = {};
+
+        document.onkeydown = function (e) {
+            var e = e || event;
+            pressed[e.keyCode] = true;
+
+            for(var i = 0; i < codes.length; i++) {
+                if(!pressed[codes[i]]) {
+                    return;
+                }
+            }
+
+            func();
+
+
+        };
+
+        document.onkeyup = function (e) {
+            delete pressed[e.keyCode];
+            console.log(pressed);
+        }
+    }NikitaUa (20:08):
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+ <input  type="text">
+ <script>
+ i = document.getElementsByTagName("input")[0];
+ // i.addEventListener("keypress",fun);
+ //  function fun(event){
+ //    a = String.fromCharCode(event.keyCode);
+ //    console.log(a);
+ //    if(isNaN(a)){
+ //      event.preventDefault();
+ //      return false;
+ //    }
+ //  }
+
+   i.onkeypress =  function (event){
+    a = String.fromCharCode(event.keyCode);
+    console.log(a);
+    if(isNaN(a)){
+      // event.preventDefault();
+      return false;
+    }
+  }
+ </script>
+</body>
+</html>
+osman-ThinkPad-E460 (21:03):
+   function aaction() {
+        alert('hello');
+    }
+    keyPressed(aaction, "Q".charCodeAt(), 'R'.charCodeAt());
+
+    function keyPressed(func) {
+        var codes = [].slice.call(arguments, 1);
+        var pressed = {};
+
+        document.onkeydown = function (e) {
+            var e = e || event;
+            pressed[e.keyCode] = true;
+
+            for(var i = 0; i < codes.length; i++) {
+                if(!pressed[codes[i]]) {
+                    return;
+                }
+            }
+
+            func();
+
+
+        };
+
+        document.onkeyup = function (e) {
+            delete pressed[e.keyCode];
+            console.log(pressed);
+        }
+    }

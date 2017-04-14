@@ -1,0 +1,496 @@
+@import 'variables'
+@import 'mixins'
+
+// nav states
+.accordion-group
+  background-color: $white
+  .accordion-heading
+    position: relative
+    transition: background-color $step-transition-time linear;
+    border-top: 1px solid $white
+
+    a
+      color: $green-color !important
+      font-family: "Open Sans"
+      font-weight: bold
+      display: block
+      padding: 25px 25px 22px
+      text-decoration: none !important
+    &.inactive
+      color: $light-gray-color
+      a
+        color: $light-gray-color !important
+        text-decoration: none
+        cursor: default
+      #steps & // overwrite for accordion-headings in the steps
+        background-position-y: (($step-heading-height - $ok-icon-height) / 2) // vertically center
+    &.loading
+      background-image: url('../msse_vendors/images/deal_builder/spinner_small.png')
+      background-position: 95% 50%
+      background-repeat: no-repeat
+      &:after
+        content: ''
+        position: absolute
+        background-image: url('../msse_vendors/images/deal_builder/spinnerdot_small.gif')
+        background-position: 95% 50%
+        background-repeat: no-repeat
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+
+  .accordion-body
+    // overflow: hidden
+    ul
+      margin: 0
+      padding: 0
+      float: left
+      margin-top: 8px
+      li
+        list-style: none
+    .confirm-location span, .confirm-area
+      margin: 0 0 0 16px
+    .confirm-area
+      font-size: 14px
+    input[type="submit"]
+      margin: 0
+      padding: 10px 18px
+
+.accordion-group .accordion-body .actions input[type="submit"]
+  margin: 0
+
+.accordion-group
+  &.open .accordion-heading
+    background-color: $white
+    a
+      cursor: default
+  &.closed .accordion-heading
+    background-color: $soft-gray-color
+    a
+      cursor: pointer
+
+// Note: These are purposely after the above rules so the
+// specificity level overrides the values
+.accordion-group
+  &.opening .accordion-heading
+    background-color: $white
+  &.closing .accordion-heading
+    background-color: $soft-gray-color
+
+.accordion-group.completed
+  .accordion-heading
+    background-image: url("../msse_vendors/images/deal_builder/ok_icon.png")
+    background-repeat: no-repeat
+    background-position: 95% 50%
+.accordion-group.completed-active
+  .accordion-heading
+    a
+      cursor: pointer
+
+#app dl.accordion dt.closed:before
+  content: "\e060"
+  margin-left: 7px
+  color: $cyan-color
+  font-size: 13px
+  -webkit-font-smoothing: antialiased
+
+#app dl.accordion dt.open:before
+  content: "\e08a"
+  margin-left: 7px
+  color: $cyan-color
+  font-size: 13px
+  -webkit-font-smoothing: antialiased
+
+// overwrite for accordion-headings in the steps
+#steps
+  .accordion-heading a
+    padding: 0 0 0 25px
+    line-height: $step-heading-height
+  .accordion-group.closed .accordion-body
+    display: none
+  .accordion-body
+    fieldset
+      padding: 0 30px 30px 30px
+      margin-top: 0
+    p
+      font-size: 14px
+    dl
+      margin: 0
+
+  #chooseService .accordion-body
+    fieldset
+      &:nth-of-type(2)
+        margin-top: -10px // Pull it up a little closer to the input box above
+      div[data-view-name~="chooseServiceDetails"]
+        margin-bottom: 0
+      div.details-discount
+        position: relative
+        margin: 0 0 16px -1px
+        clear: both
+        font-size: 15px
+        dl
+          float: left
+          &:first-child
+            margin-right: 10px
+          &:last-child
+            float: right
+          dt
+            font-weight: normal !important
+          dd
+            margin-left: 5px !important
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: bold
+          dt, dd
+            float: left
+        .box
+          display: flex
+          width: 100%   
+          .box-item
+            flex: 1
+            padding: 0px
+            font-size: 18px
+            line-height: 24px
+            text-align: center
+            margin-left: 5px !important
+            font-family: "Open Sans Semibold", "Helvetica Neue", sans-serif
+            color: #333     
+            span.title
+              font-weight: normal !important
+              line-height: 20px
+              font-size: 12px
+              text-align: center
+              padding: 3px
+              display: block
+            position: relative
+            &:after 
+              content: ""
+              position: absolute
+              right: 0
+              bottom: 10px
+              height: 50%
+              width: 1px
+              background-color: #999999
+            &:last-child
+              &:after
+                content: none
+        div
+          margin: 0
+        .help-icon
+          position: absolute
+          margin-left: 2px
+
+  #fine-print-builder
+    width: 300px
+    margin: 0
+    & > div ~ div // All divs except the first
+      label h6
+        margin-top: 30px
+    div
+      margin: 0
+    .fill
+      margin-bottom: 10px
+    .fine-print-option-wrapper > div:last-child // aka: the last .fill element
+      margin-bottom: 0
+
+  #agreement
+    label
+      font-size: 14px
+      color: $dark-gray-color
+      margin-left: 18px
+    div
+      margin: 0
+
+.recommended
+  margin-left: 10px
+  font-family: "Open Sans"
+  background-image: url('../msse_vendors/images/deal_builder/db_recommended.png')
+  background-repeat: no-repeat
+  padding-left: 10px
+  background-position: 0 center
+  padding: 10px
+  > span
+    background-color: #f9fcf7
+    color: $green-color
+    border: 1px solid #e3f0da //#d2e7c3
+    border-left: none
+    padding: 4px 15px 4px 10px
+    font-style: italic
+
+.confirm-location
+  span
+    width: 208px
+    display: block
+    margin: auto
+    font-size: 14px
+    p
+      margin: 0
+
+#deal-preview
+  display: none
+
+////////////////////////////
+// FAQs are currently using '.accordion-group .accordion-body' instead of '.accordion-group'
+// to hold open and closed classes.  This is a workaround to prevent breaking FAQs.
+#faqs
+  .accordion-group
+    .accordion-body.closed
+      display: none
+///////////////////////////
+
+
+// form style
+.form-label
+  font-size: 14px
+  margin: 10px 0 10px
+  color: $dark-gray-color
+  font-weight: normal
+  #steps &
+    margin-top: 0
+
+// TOOTIPS STYLES
+.tipsy
+  font-size: 14px
+
+.help-icon
+  height: 20px
+  width: 20px
+  cursor: default
+  a
+    padding: 0 10px
+    background-image: url("../msse_vendors/images/deal_builder/db_icon_tooltip.png")
+    background-repeat: no-repeat
+    background-position: center center
+    z-index: 10
+    position: static
+
+//icons
+.download
+  background-image: url("../msse_vendors/images/deal_builder/db_icon_download.png")
+  background-repeat: no-repeat
+  padding-left: 25px
+.print
+  background-image: url("../msse_vendors/images/deal_builder/db_icon_print.png")
+  background-repeat: no-repeat
+  padding: 4px 0 0 25px
+  vertical-align: middle
+
+.flexslider
+  .flex-control-nav li a
+    box-shadow: none
+    height: 12px
+    width: 12px
+
+// loading error message
+.screen-error
+  #faqs
+    bottom: 0
+  #faqs-modal
+    display: none
+  .error-container
+    background-color: $white
+    border: 2px solid $green-color
+    height: 330px
+    left: 0
+    margin: auto
+    padding: 35px 80px
+    position: absolute
+    right: 0
+    top: 25%
+    text-align: center
+    width: 500px
+    .mobile-error
+      display: none
+    h1
+      color: $green-color
+      font-weight: lighter
+      font-size: 21px
+      margin-bottom: 15px
+    p
+      color: $dark-gray-color
+      font-weight: lighter
+      font-size: 14px
+    .example-chat
+      padding-top: 30px
+      border-bottom: 1px solid $green-color
+      width: 300px
+      margin: auto
+      &:before
+        content: "Live chat tab"
+        font-size: 12px
+        color: $light-gray-color
+        margin-bottom: 10px
+        display: block
+        background-image: url("../msse_vendors/images/rube_goldberg/rg_arrow_error.png")
+        height: 55px
+        padding-top: 13px
+        background-repeat: no-repeat
+        background-position: center 30px
+      span
+        background-color: $black-color
+        border-radius: 5px 5px 0px 0px
+        color: $white
+        font-size: 12px
+        text-align: left
+        height: 30px
+        display: block
+        width: 200px
+        margin: auto
+        padding: 8px
+        &:after
+          content: '\e077'
+          font-family: 'Groupon'
+          color: $white
+          float: right
+          margin-right: 1px
+          -webkit-font-smoothing: antialiased
+
+// RB tutorial
+.db
+  &.trip-block
+    border-radius: 0
+    background-color: $white
+    border: 2px solid $green-color
+    text-align: center
+    padding: 20px
+    width: 330px
+    font-size: 14px
+    top: 94px !important
+    &.e
+      margin-left: 7px
+      &:before
+        background-position: left center
+        left: -26px
+    &.w
+      margin-left: -7px
+      &:before
+        background-position: right center
+        right: -26px
+    &.e:before,
+    &.w:before
+      content: ''
+      background-image: url('../msse_vendors/images/deal_builder/db_tutorial_pointer.png')
+      display: block
+      width: 10px
+      height: $height = 75px
+      position: absolute
+      background-repeat: no-repeat
+      margin-top: -(($height / 2) + 10)
+      top: 50%
+    a
+      text-decoration: none
+    .trip-close
+      font-size: 0
+      line-height: 0
+      &:before
+        color: $black
+        font-size: 15px
+        content: $icon-x
+
+    .trip-next,
+    .trip-prev
+      background-color: $green-color
+      padding: 7px 20px
+      color: $white
+      display: inline-block
+      margin: auto
+      font-size: 13px
+    .trip-next
+      &:after
+        color: $white
+        font-size: 10px
+        margin-left: 7px
+        content: $icon-arrow-right-large
+    .trip-prev
+      display: none !important
+    .trip-content
+      margin: 20px 0
+
+.trip-overlay
+  opacity: .3
+
+
+// FLEXIBLE DISCOUNT STYLES
+.flexible-wrap
+  margin: 60px 0 15px 10px
+  width: 300px
+  height: 175px
+
+  ::selection
+    background: none
+  ::-moz-selection
+    background: none
+    // the "!important" 'hacks are overwriting the plugin styles
+  input
+    font-family: "Helvetica Neue", sans-serif !important
+    font-size: 90px !important
+    margin-top: 73px !important
+    height: auto !important
+    font-weight: 400 !important
+    &.sad
+      color: rgb(153,153,153) !important
+
+  .flexible-discount
+    height: 300px
+    position: absolute
+
+    canvas
+      margin-left: -10px
+
+  .face-cursor
+    position: relative
+    width: 40px
+    height: 89px
+    margin-top: -73px
+    margin-left: 4px
+    z-index: 1000
+    cursor: pointer
+    &.sad,
+    &.happy
+      background-repeat: no-repeat
+      background-size: 100% 100%
+      display: block
+    &.sad
+      background-image: url("../msse_vendors/images/deal_builder/sad.png")
+    &.happy
+      background-image: url("../msse_vendors/images/deal_builder/happy.png")
+
+  .knob:focus
+    outline: none
+
+  .percent
+    font-family: "Helvetica Neue", sans-serif !important
+    color: $gray-discount-color
+    position: relative
+    top: 94px
+    font-size: 30px
+    left: 199px
+    font-weight: 200
+
+  .min,
+  .max
+    display: block
+    color: $gray-discount-color
+    font-size: 20px
+    position: absolute
+    font-weight: 200
+    top: 147px
+  .min
+    left: -14px
+  .min span,
+  .max span
+    font-size: 17px
+    vertical-align: top
+    margin-left: -7px
+    color: $gray-discount-color
+  .max
+    left: 272px
+
+.bad-discount-message
+  background-color: $gray-bad-discount-bg
+  padding: 10px 8px
+  margin: 0 0 0 -10px
+  p
+    color: $bad-discount-p
+    font-size: 15px
+    line-height: 20px
+    margin-bottom: 0

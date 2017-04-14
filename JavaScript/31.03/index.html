@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<input type="number" id="inp">
+<button id="addBoard">Click me</button>
+<div id="board"></div>
+
+
+<script type="text/javascript" src="jquery-3.2.0.js"></script>
+<script>
+    $(document).ready(function () {
+        function addBoard(count) {
+            var n = 0;
+            for (var i = 0; i < 8; i++) {
+                for (var j = 0; j < 8; j++) {
+                    if (n >= count) {
+                        return
+                    }
+                    if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
+//                    $('#board').append('<div class="b"></div>');
+                        if (i == 3 && j == 3) {
+                            $('<div class="w r" style="display: none"></div>').appendTo('#board').show(2000);
+                            n++;
+                        }
+                        else {
+                            $('<div class="w" style="display: none"></div>').appendTo('#board').show(2000);
+                            n++;
+                        }
+                    else {
+//                    $('#board').append('<div class="w"></div>');
+                        $('<div class="b" style="display: none"></div>').appendTo('#board').show(2000);
+                        n++;
+                    }
+                }
+            }
+        }
+
+        $('#addBoard').click(function (e) {
+            var count = $('#inp').val();
+            addBoard(count);
+        });
+
+        $('#board').on('click', '.r', function (e) {
+            alert('Hello');
+        });
+    });
+</script>
+</body>
+</html>

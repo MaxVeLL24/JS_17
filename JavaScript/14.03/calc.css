@@ -1,0 +1,46 @@
+#calc{
+    box-sizing: border-box;
+    max-width: 300px;
+    width: 100%;
+    height: 500px;
+    background-color: #d1d1d1;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 15px;
+}
+.separate{
+    border: 2px solid white;
+    border-radius: 2px;
+
+    width: 275px;
+    height: 450px;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.inputlabel{
+    width: 250px;
+    height: 35px;
+    margin: 0 auto;
+
+}
+span.previousnumber{
+    float: right;
+    color: white;
+}
+.numberinit{
+    background-color: deepskyblue;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    color: white;
+    border-radius: 10px;
+}
+div.commandtabs{
+    margin-top: 25px;
+    display: flex;
+}
+div.commandtabs button{
+    width: 33%;
+    height: 33%;
+}

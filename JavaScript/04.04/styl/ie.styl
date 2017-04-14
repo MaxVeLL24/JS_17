@@ -1,0 +1,45 @@
+.ie8,
+.ie9,
+.ie10
+  div.custom-select
+    &:after
+      content: ''
+      display: table
+  select
+    padding: 10px
+
+  .add-location
+  .edit-location
+    .custom-select select
+      padding: 8px 5px 5px
+
+  #cont-build #required input[disabled]
+    padding: 0
+
+  .flexible-discount .face-cursor.sad
+    background-image: url("../msse_vendors/images/deal_builder/sad_small.png")
+
+  .flexible-discount .face-cursor.happy
+    background-image: url("../msse_vendors/images/deal_builder/happy_small.png")
+
+#cont-build nav#steps #rg-redemption-location .rg-location input[disabled]
+  padding: 0
+
+#fine-print-builder
+  #required
+    .fill
+      .fine-print-checkbox
+        padding: 0
+        margin: 0
+      .text-input
+        &:before,
+        &:after
+          content: none
+
+/* IE10+ CSS here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  .flexible-discount .face-cursor.sad
+      background-image: url("../msse_vendors/images/deal_builder/sad_small.png")
+
+  .flexible-discount .face-cursor.happy
+    background-image: url("../msse_vendors/images/deal_builder/happy_small.png")

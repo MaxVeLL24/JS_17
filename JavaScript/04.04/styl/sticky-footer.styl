@@ -1,0 +1,46 @@
+/* Sticky Footer by Ryan Fait http://ryanfait.com/ */
+
+/**
+ * Requires the following variables:
+ * $footer-height
+ *   - The total height of the `footer` element (ie; including border + padding)
+ *
+ * Works on the following HTML:
+    <body>
+      <div id="sticky-footer-wrap">
+          [Content here]
+          <div id="sticky-helper"></div>
+      </div>
+      <footer>...</footer>
+    </body>
+ *
+ * Notes:
+ *  1. Any divs between <body> and #sticky-footer-wrap must have height: 100% set
+ */
+
+// * {
+// 	margin: 0;
+// }
+html, body
+  height: 100%
+  display: block
+
+// App specific divs between <body> and #sticky-footer-wrap (see Note 1 above)
+#app
+  min-height: 100%
+  width: 100%
+
+#layout-view
+  height: 100%
+
+#sticky-footer-wrap
+  min-height: 100%
+  height: auto !important // Browser hack
+  height: 100%
+  margin: 0 auto (- 120px)
+  position: relative
+
+footer, .sticky-helper
+  height: 120px /* 'push' must be the same height as 'footer' */
+  margin: 0
+/* END - Sticky Footer by Ryan Fait http://ryanfait.com/ */

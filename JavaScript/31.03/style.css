@@ -1,0 +1,20 @@
+#board {
+    width: 400px;
+    font-size: 0;
+}
+
+.w, .b {
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.w {
+    background: linear-gradient(90deg, #f9fcf7 37%, #f1f5ee 95%, #fbfff6 100%);
+}
+
+.b {
+    background: linear-gradient(30deg, #4c4c4c 0%, #262626 12%, #161616 25%, #262626 39%, #1e1e1e 40%, #000000 55%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
+}

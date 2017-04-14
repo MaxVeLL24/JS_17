@@ -1,0 +1,18 @@
+#blok{
+	width:200px;
+	height:200px;
+border:1px solid black;
+left:40%;
+top:100px;	
+position:absolute;
+background:gold;
+	
+	
+}
+#adm{
+	
+	position:relative;	
+	top:350px;
+	left:40%
+	
+}

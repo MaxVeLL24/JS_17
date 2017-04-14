@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /*div {*/
+        /*margin: 0 auto;*/
+        /*padding-top: 1px;*/
+        /*border-radius: 50%;*/
+        /*}*/
+        div {
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        div div {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div id="pd" style="width: 500px; height: 500px; background-color: aqua"></div>
+
+<script>
+    function appendChilds(parent, childs) {
+        var box = document.createDocumentFragment();
+        for (var i = 0; i < childs.length; i++) {
+            box.appendChild(childs[i])
+        }
+        parent.appendChild(box);
+    }
+    function appender(parentDiv, n) {
+        if (n == 0) {
+            return
+        }
+        var width = +parentDiv.offsetWidth,
+            height = +parentDiv.offsetWidth,
+            divs = [];
+        for (i = 0; i < 9; i++) {
+            var div = document.createElement('div');
+            div.style.width = width / 3 + 'px';
+            div.style.height = height / 3 + 'px';
+            divs.push(div);
+        }
+        divs[4].style.backgroundColor = 'white';
+        appendChilds(parentDiv, divs);
+        n--;
+        for (var i = 0; i < divs.length; i++) {
+            if (i != 4) {
+                appender(divs[i], n)
+            }
+        }
+
+    }
+    appender(pd,5);
+    //    function getRandomInt(min, max) {
+    //        return Math.round(min + (max - min) * Math.random());
+    //    }
+    //    function getRandomCanalIntensity() {
+    //        var a = getRandomInt(0, 255).toString(16);
+    //        if (a.length != 2) {
+    //            a = '0' + a;
+    //        }
+    //        return a;
+    //    }
+    //    function getRandomColor() {
+    //        var r = getRandomCanalIntensity(),
+    //            g = getRandomCanalIntensity(),
+    //            b = getRandomCanalIntensity();
+    //        return "#" + r + g + b;
+    //    }
+    //    function appedDivs(parentDiv, k, n) {
+    //        if (n > 0) {
+    //            var width = +parentDiv.offsetWidth,
+    //                height = +parentDiv.offsetHeight,
+    //                childDiv = document.createElement('div')
+    //        }
+    //        childDiv.style.width = width * k + 'px';
+    //        childDiv.style.height = height * k + 'px';
+    //        childDiv.style.backgroundColor = getRandomColor();
+    //        childDiv.style.marginTop = height * (1 - k) / 2 + 'px';
+    //        parentDiv.appendChild(childDiv);
+    //        appedDivs(childDiv, k, n - 1);
+    //    }
+    //    appedDivs(pd, 0.9, 40);
+    //    function factorial(n) {
+    //        if (n == 1) {
+    //            return n = 1;
+    //        }
+    //        return n * factorial(n - 1);
+    //    }
+    //    function pow(a, n) {
+    //        if (n == 1) {
+    //            return a;
+    //        }
+    //        else return a * pow(a, n - 1)
+    //    }
+    //
+    //    function write(n) {
+    //        if (n == 0) {
+    //            return n = 0;
+    //        }
+    //        else {
+    //            return n += "" + write(n - 1);
+    //        }
+    //        console.log(n);
+    //    }
+    //    function superCount(arr, mode) {
+    //        var length = 0;
+    //        for (i = 0; i < arr.length; i++) {
+    //            if (arr[i]) {
+    //                if (Array.isArray(arr[i]) && mode === true) {
+    //                    length += superCount(arr[i], true)
+    //                } else length++
+    //            }
+    //        }
+    //        return length;
+    //    }
+    //    var a = [1, 2, 3, [4, 5, 6, [7, 8, 9]]];
+</script>
+</body>
+
+</html>

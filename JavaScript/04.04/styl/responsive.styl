@@ -1,0 +1,939 @@
+// CAROUSEL FOR LANDSCAPE MOBILE
+@media only screen and (max-width: 480px)and (orientation: landscape)
+  #app #cont-build nav#steps #dealImage .carousel
+    height: 195px
+  #app #cont-build nav#steps #dealImage button
+    margin-top: 5px
+
+@media only screen and (max-device-width: 480px)
+  #app #cont-build nav#steps #dealImage .flex-control-nav
+    bottom: -74px
+
+@media only screen and (max-width: 480px)
+  #app .options-woohoo li
+    display: block !important
+
+// MOBILE DEAL BUILDER
+@media only screen and (max-width: 480px)
+  body.responsive input[type="text"]
+    -webkit-appearance: none
+    border-radius: 0
+
+  body.responsive input.medium, body.responsive .businessAddress.medium select
+    width: 50%
+
+  body.responsive .styled-select.medium select
+    width: 175px !important // conflict with GIG
+
+  body
+    // size for form with out GIG
+    &.responsive
+
+      /* This is the background for the steps */
+      #cont-build:before
+        width: 100%
+
+      input.large,
+      .styled-select.large select
+        width: 100% !important
+
+    .no-mobile
+      display: none
+
+    .spaceship
+      width: 100px
+      margin: 35px 0px 40px 125px
+
+    .clo-download
+      margin: 0px 50px 20px 50px
+
+    .clo-print
+      margin: 10px 50px 0px 70px
+
+    #app .help-icon a
+      background-image: url("../msse_vendors/images/deal_builder/db_icon_tooltip@2x.png")
+      background-size: 14px 14px
+
+    header
+      height: $header-height-mobile
+      width: 100%
+      a
+        background-image: url("../msse_vendors/images/deal_builder/deal_builder_brand@2x.png")
+        background-size: 100% auto
+        max-height: $header-inner-height
+        max-width: 373px
+        width: 100%
+        margin: 0 auto
+      .offer-builder-title
+        background-image: url("../msse_vendors/images/offers/offer_brand@2x.png")
+
+  body #app, #app #layout-view
+    height: auto
+
+  #app #cont-build
+    overflow: inherit
+    height: auto
+    nav#steps
+      float: none
+      width: auto
+      margin: 0 0 60px 0
+    .mobile-contract
+      background-image: url("../msse_vendors/images/deal_builder/db_icon_preview@2x.png")
+      background-size: 20px 20px
+      display: block
+    .preview-contract-container
+      border-left: 0
+      margin-right: 0
+      .dealPreview
+        width: auto
+        margin: 0
+    .preview-contract-container #preview
+      display: none
+    .mobile-preview-contract-container
+      display: block
+
+  #app .show-dealpreview-mobile
+    display: block
+    float: left
+
+  #app .offer-agreement-helper
+    .agreement-left-column
+      display: inline-block
+      width: 10% !important
+      height: 100%
+      vertical-align: top
+    .agreement-text
+      display: inline-block
+      width: 90% !important
+    .agreement-btn
+      margin: 0 auto
+      float: none
+      display: block
+      width: 50%
+      .btn-buy
+        width: 100%
+
+  #app .offer-footer
+    padding-right: 20px
+    padding-left: 20px
+    .offer-agreement-footer
+      width: 100%
+      height: 100%
+
+
+  #app .contract-helper
+    background-color: $white
+    .contract-inner
+      padding: 10px 20px
+      > div
+        padding: 0
+
+    .contract-terms
+      table
+        td
+          padding: 0
+        tr
+          padding: 10px 5px
+        .table-image
+          display: none
+        .contract-bold
+          padding: 7px 10px !important
+        .contract-regular
+          border-right: 1px solid $gray-border
+          p
+            padding-bottom: 10px
+            padding-top: 0px
+            padding-right: 10px
+            padding-left: 10px
+      .hide-mobile
+        display: none
+      .hide-regular
+        display: block
+      h6
+        margin-bottom: 2px
+
+  #app .mobile-preview-contract-container
+    .nutshell-preview
+      border-top: 1px solid $gray-line
+      min-height: 64px
+      margin-bottom: 30px /* contract-container */
+      h3
+        line-height: 14px
+    .fine-print
+      padding: 0 0 20px 0
+      font-size: 14px
+      border-top: 1px solid $gray-line
+      border-bottom: 0px
+      img
+        width: 460px
+    .confirm-location
+      margin: auto
+      border-top: 1px solid $gray-line
+      padding-top: 20px
+      h5
+        font-weight: lighter
+        color: $dark-gray-color
+        height: 20px
+        vertical-align: middle
+        padding: 0 0 0 25px
+    .confirm-location
+      h5
+        font-size: 12px
+        font-family: $text
+        font-weight: lighter
+        color: $black
+        background-image: url("../msse_vendors/images/deal_builder/db_icon_location.png")
+        background-repeat: no-repeat
+        padding: 0 0 0 25px
+        height: 20px
+        vertical-align: middle
+
+    #dealpreview-bottom-inner
+      .left-column
+        float: left
+        width: auto
+        padding: 0 0 0 0
+      .right-column
+        float: left
+        width: auto
+        padding: 0 0 0 0
+    .dealPreview-inner
+      background-color: $white
+      box-shadow: 0px 0px 8px $light-gray-color
+      padding: 10px 20px
+      overflow: hidden /* responsive.styl */
+      figure
+        width: 100%
+        overflow: hidden
+        background-color: transparent
+        margin: 0
+      #deal_discount
+        width: 300px
+        margin-right: auto
+        margin-left: auto
+        border-bottom: none !important
+        margin-bottom: 0px !important
+      .price-tag-inner
+        padding-bottom: 10px
+        span
+          color: $black
+          font-size: 48px
+          font-family: $text
+          font-weight: bold
+          &.from-price
+            font-size: 12px
+            font-weight: lighter
+            color: $gray-from-price
+            display: block
+            margin-bottom: -12px
+        .btn-buy-big
+          background-image: linear-gradient($btn-light-green, $btn-dark-green)
+          border: 0
+          box-shadow: none !important
+          border-radius: 32px
+          clear: both
+          color: $white
+          cursor: default
+          display: block
+          float: right
+          font-family: $text
+          font-weight: lighter
+          font-size: 24px
+          line-height: .75em
+          max-width: 220px
+          margin: 0 auto 20px
+          padding: 1em 0
+          position: static !important
+          text-transform: uppercase
+          text-shadow: none !important
+          width: 55%
+          &:focus
+            -moz-outline: 0 none
+            outline: 0 none
+      #deal_discount
+        border-bottom: 1px solid $gray-line
+        margin-bottom: 20px
+        overflow: hidden
+        padding-bottom: 20px
+        > dl
+          float: left
+          margin: 0 11px 0 0
+          width: 28%
+        dl > dt
+          font-size: 11px
+          font-family: $text
+          font-weight: lighter
+        dl > dd
+          clear: both
+          font-size: 17px
+          font-family: $text
+          font-weight: bold
+          display: block
+          margin: 0
+
+      strong, .changedValue
+        font-family: $text
+        font-weight: bold
+      .title-deal-preview
+        background-image: url("../msse_vendors/images/deal_builder/db_dealpreview.png")
+        background-position: center center
+        background-repeat:  no-repeat
+        position: absolute
+        color: $dark-gray-color
+        top: -25px
+        left: 10px
+        width: 100px
+        height: 24px
+        text-indent: -9999px
+      h1
+        line-height: 1.3em
+        letter-spacing: -1px
+        text-transform: capitalize
+        margin: 0
+        font-family: $text
+        font-weight: lighter
+        font-size: 35px
+      h3
+        font-family: $text
+        font-weight: lighter
+        color: $black-color
+        font-size: 24px
+        margin: 20px 0
+      .deal-subtitle
+        font-family: $text
+        font-weight: lighter
+        text-transform: capitalize
+        color: $black-subtitle
+        font-size: 16px
+        margin: 5px 0 0
+      .inner-deal-left
+        float: left
+        padding: 10px 0
+        width: 225px
+        .price-tag-inner
+          span
+            color: $black
+            font-size: 48px
+            font-family: $text
+            font-weight: bold
+            &.from-price
+              font-size: 12px
+              font-weight: lighter
+              color: $gray-from-price
+              display: block
+              margin-bottom: -12px
+          .btn-buy-big
+            background-image: linear-gradient($btn-light-green, $btn-dark-green)
+            border: 0
+            box-shadow: none !important
+            border-radius: 32px
+            clear: both
+            color: $white
+            cursor: default
+            display: block
+            font-family: $text
+            font-weight: lighter
+            font-size: 24px
+            line-height: .75em
+            max-width: 220px
+            margin: 0 auto 20px
+            padding: 1em 0
+            position: static !important
+            text-transform: uppercase
+            text-shadow: none !important
+            width: 100%
+            &:focus
+              outline: 0 none
+      .confirm-location span
+        width: auto
+        padding-left: 26px
+        p
+          font-size: 13px
+          line-height: 1.5em
+          padding-bottom: 10px
+
+  &.modal .modal-body
+    padding: 0px
+    .modal-inner
+      padding: 20px
+  .fine-print
+    padding: 0px 0px 20px
+    font-size: 14px
+    border-top: 1px solid $gray-line
+    border-bottom: 1px solid $gray-line
+
+  #app .dealPreview .dealPreview-inner .title-deal-preview
+    background-image: url("../msse_vendors/images/deal_builder/db_dealpreview@2x.png")
+    background-size: 100px 24px
+
+  #app #preview-modal
+    .nutshell-preview
+      border-top: 1px solid $gray-line
+      min-height: 64px
+      margin-bottom: 30px
+      h3
+        line-height: 14px
+      .text-example
+        position: relative
+        height: 33px
+        overflow: hidden
+        &:before, &:after
+          content: ''
+          display: block
+          height: 16px
+          position: absolute
+          background-color: $light-paragraph-gray
+        &:before
+          top: 0
+          left: 0
+          width: 100%
+        &:after
+          top: 17px
+          left: 0
+          width: 100%
+  &.modal .modal-body
+    padding: 0px
+    .modal-inner
+      padding: 20px
+  .fine-print
+    padding: 0px 0px 20px
+    font-size: 14px
+    border-top: 1px solid $gray-line
+    border-bottom: 1px solid $gray-line
+
+  #app #preview-modal .modal-body
+    padding: 0
+  #app #preview-modal .questionnaire-content.pending
+    opacity: 1
+  #app #preview-modal .questionnaire-content.pending h3,
+  #app #preview-modal .questionnaire-content.completed  h3
+    color: $gray
+  #app #preview-modal .questionnaire-content.pending.completed
+    h3
+      color: $gray
+  #app #preview-modal .questionnaire-content.open.completed
+    h3
+      color: $black
+
+  #app .dealPreview .dealPreview-inner .title-deal-preview
+    background-image: url("../msse_vendors/images/deal_builder/db_dealpreview@2x.png")
+    background-size: 100px 24px
+
+  #app .recommended
+    background-image: url('../msse_vendors/images/deal_builder/db_recommended@2x.png')
+    background-size: 10px 29px
+
+  #app #cont-build nav#steps #rg-redemption-location .rg-location a.edit,
+  #app #cont-build nav#steps #serviceArea a.edit,
+  #app #rg-woohoo-wrapper nav#steps #rg-redemption-location .rg-location a.edit
+    float: right
+
+  #app #cont-build nav#steps .actions li a.mobile-contract
+    display: block
+
+  #app #cont-build.row nav .finePrint-options div.clickableInput input
+    width: 38px
+
+  #app #fine-print-builder
+    width: 100%
+
+  #app #cont-build nav#steps .finePrint-options .fill span div.inner-select select
+    width: 100%
+
+  #app #cont-build nav#steps .deal-regular-price .loading-discount
+    background-image: url('../msse_vendors/images/deal_builder/spinner@2x.png')
+    background-size: 33px 33px
+
+  #cont-build nav#steps .deal-regular-price .loading-discount span
+    width: 105px
+    margin: -6px 5px 0
+
+  #app #cont-build nav#steps input.agreement
+    width: 155px
+
+  #app button[type='submit']:before,
+  #app .cupcake-gallery button[class*='btn']:after,
+  #app .cupcake-gallery button[type='submit']:after
+    background-image: url('../msse_vendors/images/deal_builder/db_arrow_btn@2x.png')
+    background-size: 7px 10px
+
+  #app button[type='submit'][disabled], .btn-contract
+    background-image: url('../msse_vendors/images/deal_builder/db_arrow_btn_disable@2x.png')
+    background-size: 7px 10px
+
+  #app .flat-btn[type='submit'][disabled], #app .flat-btn[type='submit']:before
+    background-image: none
+    background-size: 0 0
+
+  #app #cont-build nav#steps #launchDate ul, #rg-woohoo-wrapper nav#steps #launchDate ul
+    width: auto
+
+  #app
+    position: absolute
+
+  #app .rg-contract
+    padding: 30px 0
+    .tab-agreement
+      display: none
+
+  // FLEXIBLE DISCOUNT STYLES
+  #app .flexible-wrap
+    margin: 60px auto 15px
+
+  #app .bad-discount-message
+    margin: 0 auto 0
+
+  // FAQS MODAL STYLES
+  #app #faqs
+    bottom: 120px
+    .faqs-heading
+      position: static
+      a
+        float: right
+    .faqs-body
+      display: none !important
+
+  #faqs a.faqs-desktop
+    display: none
+
+  #faqs .faqs-heading a.faqs-mobile, #faqs-modal.modal .faqs-heading a.faqs-mobile
+    display: inherit
+
+  #faqs .faqs-body div, #faqs-modal.modal .faqs-body div
+    width: auto
+    height: auto
+
+  #faqs-modal.modal .accordion-heading
+    display: none
+
+  #app #faqs dl.accordion dt
+    font-size: 12px
+
+  #app #faqs, #app #faqs-modal.modal
+    position: absolute
+
+  #faqs-modal.modal .modal-title
+    font-size: 18px
+
+  #contract-modal.modal .modal-title
+    font-size: 16px
+
+  #faqs-modal.modal .row
+    height: 85%
+    overflow-y: scroll
+
+  #contract-modal .row
+    height: 80%
+    overflow-y: scroll
+
+  //CONTRACT MODAL STYLES
+  #contract-modal.modal .modal-title
+    font-size: 16px
+
+  #app #contract-modal
+    .contract-body
+      padding: 0
+    .contract-inner
+      width: 97%
+      margin: 0
+      .no-mobile, .contract-head
+        display: none
+    .contract-wrapper
+      height: 85%
+      overflow-y: scroll
+      padding-right: 10px
+      width: 85%
+
+    .accordion-group
+      .accordion-heading
+        &.completed
+          background-position: 95% 22px !important
+
+  // images
+  #app dl.accordion
+    font-size: 14px
+
+  #app #cont-build nav#steps .actions li a.download
+    background-image: url("../msse_vendors/images/deal_builder/db_icon_download@2x.png")
+    background-size: 20px 20px
+
+  #app #cont-build nav#steps .actions li a.print
+    background-image: url("../msse_vendors/images/deal_builder/db_icon_print@2x.png")
+    background-size: 20px 20px
+
+  .accordion-group.completed .accordion-heading
+    background-image: url("../msse_vendors/images/deal_builder/db_icon_checkmark@2x.png")
+    background-repeat: no-repeat
+    background-position: center right 25px
+    background-size: 18px 18px
+
+  .styled-select
+    background-image: url("../msse_vendors/images/deal_builder/db_icon_arrow_green@2x.png")
+    background-size: 12px 8px
+
+  #app .error-text:before
+      content: ''
+      background-image: url("../msse_vendors/images/deal_builder/db_icon_alert@2x.png")
+      background-repeat: no-repeat
+      background-size: 14px 14px
+
+
+  #app .accordion-heading.loading
+    background-image: url("../msse_vendors/images/deal_builder/spinner_small@2x.png")
+    background-size: 20px 20px
+    background-repeat: no-repeat
+    &:after
+      content: ''
+      background-image: url('../msse_vendors/images/deal_builder/spinnerdot_small@2x.gif')
+      background-repeat: no-repeat
+      background-size: 20px 20px
+
+  #app #steps #location .location-title
+    white-space: normal
+
+  body #app footer
+    height: auto
+    width: auto
+    margin-top: 0px
+    overflow: hidden
+    a
+      margin-bottom: 10px
+      &.groupon-works-logo:before
+        background-image: url("../msse_vendors/images/deal_builder/groupon_works_brand@2x.png")
+        background-size: 210px 43px
+      &.groupon-mc-logo:before
+        background-image: url("../msse_vendors/images/rube_goldberg/rg_grouponmerchant_logo@2x.png")
+        background-size: 248px 22px
+    p
+      text-align: left
+      clear: both
+      display: block
+      float: left
+      br
+        display: none
+      a
+        background-image: none !important
+
+  body .cupcake-inner .cupcake-gallery
+    width: 184px
+
+  // MODAL NEW STYLES
+  body #app .modal .modal-body
+    height: 100%
+    width: 100%
+    min-width: 100%
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    position: absolute
+    margin: 0
+
+  body #app .modal .modal-body .modal-inner
+    height: 100%
+    width: 100%
+
+  body #app #faqs .faqs-body div
+    width: 100%
+
+  body #app #faqs-modal.show-modal,
+  body #app #contract-modal.show-modal,
+  body #app #preview-modal.show-modal
+    display: block
+
+  // NEW WOOHOO page
+  #app .new-woohoo
+    width: auto
+    padding: 30px 20px
+    input[type="text"],
+    input[type="password"]
+      width: 300px
+    li
+      clear: both
+      border: none
+      margin: 10px 0 10px
+
+  // ERROR page
+  #app.screen-error
+    position: static
+  #app.screen-error #faqs
+    bottom: 0
+  #app .error-container
+    height: 50%
+    width: 85%
+    padding: 35px 10px
+    top: 10%
+    bottom: 10%
+
+  #app .error-container .example-chat
+    width: auto
+
+  #app .error-container .mobile-error
+    display: block
+
+  #app .error-container .desktop-error
+    display: none
+
+  body.responsive #cont-build nav#steps #launchDate ul,
+  body.responsive #rg-woohoo-wrapper nav#steps #launchDate ul
+    width: auto
+
+//MOBILE WHOOHOO AND CUPCAKE PAGE, FQAS AND CONTRACT MODALS
+@media only screen and (max-width: 977px)
+  #app .woohoo-inner .woohoo-heading
+    background-image: url("../msse_vendors/images/deal_builder/db_bg_woohoo@2x.png")
+    background-size: 1043px 231px
+    width: auto
+    padding: 25px 0 0 4%
+    h1
+      background-image: url("../msse_vendors/images/deal_builder/db_title_woohoo@2x.png")
+      background-size: 300px 79px
+      background-position: left 10px
+      float: none
+      margin: auto
+      width: 300px
+    .cat-space-desktop
+      display: none
+
+  #app .woohoo-inner .woohoo-body .details-last-step
+    top: -2px
+    width: 95% !important
+    height: auto
+    margin-bottom: 20px
+    h2
+      line-height: 1.3
+      margin-bottom: 2px
+
+  #app .woohoo-inner, #app .cupcake-inner
+    width: auto
+    .woohoo-body, .cupcake-body
+      padding: 0
+      .details-last-step
+        width: auto
+        padding: 0
+        .details-last-title
+          width: auto
+          padding: 0 5px
+        ul
+          padding-left: 0
+          li
+            border-top: 1px dashed $gray
+            border-bottom: 1px dashed $gray
+            border-right: none
+            border-left: none
+            padding: 25px 0
+            width: 230px
+            float: none
+            text-align: center
+            margin: auto
+            &:first-child, &:last-child
+              border-top: none
+              border-bottom: none
+              border-right: none
+              border-left: none
+            &:first-child
+              width: 141px
+
+  #app .woohoo-inner nav.woohoo-steps .loading
+    background-image: url('../msse_vendors/images/deal_builder/spinner@2x.png')
+    background-size: 33px 33px
+
+  #app .woohoo-inner nav.woohoo-steps .hide
+    display: none
+
+  #app .woohoo-inner .share-inner
+    width: auto
+    .share-url
+      display: block
+      font-size: 14px
+      overflow: hidden
+      width: auto
+      background-color: $white
+      border: 1px solid $gray
+      padding: 10px 10px 10px 28px
+      color: $dark-gray-color
+      background-image: url('../msse_vendors/images/deal_builder/db_icon_link@2x.png')
+      background-size: 16px 16px
+      background-position: 6px center
+      background-repeat: no-repeat
+      margin-top: 5px
+      &:hover
+        cursor: text
+        text-decoration: none
+    span
+      text-align: left
+    input
+      display: none
+
+  #woohoo .woohoo-inner nav.woohoo-steps .accordion-group .accordion-body.video-inner .woohoo-video .share-inner
+    width: 100%
+
+  #woohoo .woohoo-inner nav.woohoo-steps .accordion-group .accordion-body.video-inner .woohoo-video .share-inner .share-url
+    margin-top: 10px
+    display: block
+
+  .woohoo-body .details-last-title
+    font-size: 37px
+    line-height: 1.2
+
+  #app nav.woohoo-steps
+    width: auto
+
+  #app .mc-woohoo-inner
+    padding: 0 20px 30px
+
+  #app .verified-business
+    .status
+      padding-top: 0
+      clear: both
+      display: block
+
+  #app .cupcake-inner
+    .cupcake-heading
+      background-image: url("../msse_vendors/images/deal_builder/db_grid_cupcake@2x.png")
+      background-size: 1043px 231px
+      width: auto
+      padding: 30px 0
+      h1
+        background-image: url("../msse_vendors/images/deal_builder/db_cupcake_logo@2x.png")
+        background-size: 285px 39px
+        margin: 15px auto
+        float: none
+        padding: 0
+        width: 285px
+      .deal-head-desktop
+        display: none
+    .cupcake-body
+      .details-last-step
+        top: -2px
+        width: 95% !important
+        height: auto
+        margin-bottom: 20px
+        h2
+          line-height: 1.3
+          margin-bottom: 2px
+      .paragraph
+        margin: 0 40px
+      .how-works
+        height: auto
+        div, .subtitle
+          width: 100%
+          margin: 0
+      .build
+        background-image: url("../msse_vendors/images/deal_builder/GW_Howitworks-1@2x.png")
+        background-size: 64px 64px
+      .enjoy
+        background-image: url("../msse_vendors/images/deal_builder/GW_Howitworks-2@2x.png")
+        background-size: 75px 70px
+      .getpaid
+        background-image: url("../msse_vendors/images/deal_builder/GW_Howitworks-3@2x.png")
+        background-size: 66px 65px
+
+  #cupcake .cupcake-inner .cupcake-hero
+    display: none
+
+  #cupcake .cupcake-inner .how-works div:first-of-type
+    margin-left: 0
+
+  .show-modal
+    display: block
+
+  //chat for mobile
+  #habla_beta_container_do_not_rely_on_div_classes_or_names
+    display: none
+
+  #app #faqs-modal.show-modal, #app #contract-modal.show-modal
+    display: none
+
+  // WOOHOO MOBILE
+  #app
+    #rg-woohoo-wrapper
+      &:before,
+      nav
+        display: none
+      .woohoo-container
+        position: static
+        margin: 0
+        border: none
+        > section
+          margin: 0
+          width: auto
+          .new-woohoo
+            margin: 0
+            padding: 20px 10px
+            width: auto
+            .options-woohoo
+              padding-left: 0
+              ul
+                margin-left: 0
+                padding-left: 0
+                li
+                  border: none
+                  margin-left: 0
+                  padding-left: 0
+            .spaceship-kitty
+              display: none
+
+
+/* Non-mobile AND height >= 600px - For Offers*/
+@media only screen and (min-width: 480px) and (min-height: 600px)
+  .responsive
+    .offer-footer
+      position: fixed
+      left: 0
+      right: 0
+      bottom: 0
+
+/* Non-mobile AND height >= (preview + preview margin) + header + footer */
+@media only screen and (min-width: 480px) and (min-height: 828px)
+  .responsive
+    .rg-woohoo
+      header, footer
+        position: static
+    /* Make the header and footer stick to the page when there is enough height */
+    header, footer
+      position: fixed
+      left: 0
+      right: 0
+
+    #faqs
+      position: fixed
+
+    header
+      top: 0
+
+    footer
+      bottom: 0
+
+    /* Offset the columns to account for the fixed position header */
+    /* Note that we don't have to offset the footer, as that is already
+       done for all screen sizes to make it sticky */
+    #cont-build
+      padding-top: $header-height
+
+@media only screen and (min-width: 480px) and (max-width: 977px)
+  #app .cupcake-inner .cupcake-gallery
+    width: 85%
+
+// TABLET PORTRAIT CUPCAKE PAGE
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation : portrait)
+  #app .cupcake-inner .cupcake-gallery
+    width: 700px
+
+  body .flex-direction-nav .flex-prev
+    opacity: 1
+    left: -30px
+
+  body .flex-direction-nav .flex-next
+    opacity: 1
+    right: -30px
+
+  #app .dealPreview .loading-preview
+    background-image: url('../msse_vendors/images/deal_builder/spinner@2x.png')
+    background-size: 33px 33px
+    &:before
+      background-image: url('../msse_vendors/images/deal_builder/spinnerdot.png')
+      background-size: 33px 33px
+      background-repeat: no-repeat
+  #faqs
+    position: fixed

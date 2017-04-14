@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    //    var ladder = {
+    //        step: 0,
+    //        up: function () { // вверх по лестнице
+    //            this.step++;
+    //            return this;
+    //        },
+    //        down: function () { // вниз по лестнице
+    //            this.step--;
+    //            return this;
+    //        },
+    //        showStep: function () { // вывести текущую ступеньку
+    //            alert(this.step);
+    //        }
+    //    };
+    //    ladder.up().up().up().up().up().down().showStep();
+    //    function Human(name, age, occupation) {
+    //        this.numberOflegs = 2;
+    //        this.hair = true;
+    //        this.name = name;
+    //        this.age = age;
+    //    }
+    //    var Student = new Human('John', 22, 'Physics');
+    //    var Worker = new Human('Mike', 42);
+    function Calculator() {
+        this.methods = {
+            '+': function (a, b) {
+                return a + b;
+            },
+            '-': function (a, b) {
+                return a - b;
+            }
+        };
+
+        this.calculate = function (expression) {
+            var splitted = expression.split(' '),
+                a = +splitted[0],
+                op = splitted[1],
+                b = +splitted[2];
+            if (!this.methods[op]) {
+                alert('Sorry');
+                return;
+            }
+            alert(this.methods[op](a, b));
+        };
+        this.add = function (name, func) {
+            this.methods[name] = func;
+        }
+
+    }
+
+    var calc = new Calculator();
+    calc.calculate('4 + 5');
+    calc.add('/', function (a, b) {
+        return a / b;
+    });
+    calc.calculate('4 / 5');
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="calc.css">
+	<script type="text/javascript" src="calc.js"></script>
+</head>
+<body>
+	<div id="calc">
+		<div class="calc-box">
+			<div class="calc-display">
+				<div class="calc-output">0</div>
+				<input type="text" class="calc-input">
+			</div>
+			<div class="calc-body">
+				<div class="calc-nubers">
+					<button>7</button>
+					<button>8</button>
+					<button>9</button>
+					<button>4</button>
+					<button>5</button>
+					<button>6</button>
+					<button>1</button>
+					<button>2</button>
+					<button>3</button>
+					<button>c</button>
+					<button>0</button>
+					<button>.</button>
+				</div>
+				<div class="calc-actions">
+					<button>+</button>
+					<button>-</button>
+				</div>
+			</div>
+			<div class="calc-footer">
+				<button class="calc-result">=</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="calc2">
+
+    </div>
+	<script type="text/javascript">
+		function createCalc(id){
+			var calcBox = new Elem('div');
+			calcBox.addClass('calc-box');
+			
+			var calcDisplay = new Elem('div');
+			calcDisplay.addClass('calc-display');
+			
+			calcDisplay
+				.addChild('div')
+				.addClass('calc-out')
+				.addContent(0);
+			calcDisplay
+				.addChild('input')
+				.addClass('calc-input')
+				.setAttribute('value', 0);
+			
+			calcDisplay.appendTo(calcBox.el);
+			
+			var calcBody = new Elem('div');
+			calcBody.addClass('calc-body');
+			
+			var buttons = [7,8,9,4,5,6,1,2,3,'c', 0, '.'];
+			var numBox = calcBody.addChild('div').addClass('calc-nubers');
+			for(var i = 0; i < buttons.length; i++){
+				numBox
+					.addChild('button')
+					.addContent(buttons[i])
+					.setAttribute('data-number', buttons[i]);
+			}
+
+			calcBody.appendTo(calcBox.el);
+
+ 	  		document.getElementById(id).appendChild(calcBox.el);
+		}
+		
+		function Elem(tag){
+			this.el = document.createElement(tag);
+			this.children = [];
+			this.addClass = function(classes){
+				if(typeof classes == 'string'){
+					this.el.classList.add(classes);
+				}else{
+					for(var i = 0; i < classes.length; i++){
+						this.el.classList.add(classes[i]);
+					}
+				}
+				return this;
+			};
+
+			this.setAttribute = function(attrName, value){
+				this.el.setAttribute(attrName, value);
+				return this;
+			};
+
+			this.appendTo = function(parent){
+				parent.appendChild(this.el);
+				return this;
+			};
+
+			this.addChild = function(tag){
+				var child = new Elem(tag);
+				this.children.push(child);
+				this.el.appendChild(child.el);
+				return child;
+			};
+
+			this.addContent = function(content){
+				this.el.innerHTML = content;
+				return this;
+			}
+		}
+	</script>
+</body>
+</html>

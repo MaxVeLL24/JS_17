@@ -1,0 +1,343 @@
+input, select
+  font-family: "Open Sans", "Helvetica Neue", sans-serif !important
+  &[type="text"],
+  &[type="password"]
+    height: 34px
+    border-radius: inherit
+    font-size: 14px
+  &[type="submit"]
+    float: right !important
+
+input[disabled]
+  padding: 10px
+
+input[type="submit"].btn[disabled]
+  padding: 10px 18px
+  border: 1px solid $gray !important
+
+textarea
+  font-family: "Open Sans", "Helvetica Neue", sans-serif !important
+  font-size: 14px
+  padding: 5px
+
+//placeholder styles
+::-webkit-input-placeholder
+  color: $gray
+
+:-moz-placeholder
+  color: $gray
+
+::-moz-placeholder
+  color: $gray
+
+:-ms-input-placeholder
+  color: $gray
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder
+  color: $gray
+
+input:-moz-placeholder, textarea:-moz-placeholder
+  color: $gray
+
+// size for form
+.tiny
+  width: 50px !important
+.small
+  width: 55px !important
+.medium
+  width: 157px !important
+.large
+  width: 275px !important
+.full
+  width: 100%
+
+input:focus, textarea:focus
+  border: 1px solid $green-color
+
+// form style
+.error-text
+  clear: both
+  display: none
+  font-size: 12px
+  color: $red-color
+  padding-top: 5px
+  .required
+    float: left
+  &:before
+    content: ''
+    background-image: url("../msse_vendors/images/deal_builder/db_icon_alert.png")
+    background-repeat: no-repeat
+    width: 14px
+    height: 14px
+    display: block
+    float: left
+    padding-right: 5px
+
+.fill
+  clear: both
+  .miles, .zipcode
+    font-weight: bold
+  &.error
+    input,textarea, input[type="checkbox"], input[type="radio"]
+      background-color: $light-red-color
+      border: 1px solid $red-color !important
+      &:hover
+        border: none
+        border-radius: none
+  .container-clickable-input
+    display: inline-block
+    overflow: hidden
+    padding: 7px 0
+    vertical-align: middle
+  .text-input
+    padding: 5px 10px
+    word-break: break-word
+    max-width: 100%
+    overflow: hidden
+    vertical-align: middle
+    margin: 5px 0
+    // display: block
+    &:focus
+      border: 1px solid $green-color
+      outline: none
+      color: $black
+    &.error
+      background-color: $light-red-color
+      border: 1px solid $red-color
+      color: $red-color
+      &:before
+      &:after
+        content: ' '
+        display: inline-block
+        height: 1em
+      &:focus
+        border: 1px solid $red-color
+
+.fill-group .fill
+  float: left
+  clear: none
+  &:first-child
+    margin-right: 20px
+
+.radiobutton
+  margin: 10px 0
+  display: block
+
+// NEW MODAL STYLES
+#app .modal
+  font-size: 14px
+  color: $dark-gray-color
+  .modal-body
+    color: $dark-gray-color
+    border-radius: 0 0 0 0
+    padding: 20px 20px 30px
+    width: 40%
+    .modal-title
+      background-color: #fff
+      background-image: none
+      border-bottom: none
+      height: auto
+      border-radius: inherit
+      margin: 0 0 10px 0
+      padding: 0
+      a.close-modal
+        float: right
+        text-decoration: none
+        color: $black
+        font-size: 18px
+        cursor: pointer
+    .modal-inner
+      overflow-y: auto
+      height: 450px
+      padding: 0 10px
+      width: 100%
+      h6
+        color: $green-color
+        margin-bottom: 10px
+      ol
+        font-style: italic
+        li
+          margin-bottom: 20px
+      dl.accordion dd p
+        color: black
+      ul
+        li
+          font-size: 14px
+
+// modals
+#app #faqs-modal.modal, #contract-modal.modal
+  .modal-title
+    background-color: $white
+    background-image: none
+    color: $green-color
+    text-align: left
+    font-weight: bold
+  .modal-body
+    > div
+      width: 100%
+      padding: 0
+      // if you have fqas in a modal
+
+// BUTTONS STYLE
+button[type='submit'], button[type='button']
+  padding: 12px 20px
+  margin: 0
+  float: right
+  width: 130px
+  font-family: 'Open Sans'
+  font-weight: bold
+  &:focus
+    outline: none
+
+button[type='submit'], button[type='button']
+  font-size: 14px
+  text-align: left
+  text-shadow: none
+  border-radius: 0
+  border: none
+  overflow: hidden
+  &:before
+    content: ">"
+    background-image: url('../msse_vendors/images/deal_builder/db_arrow_btn.png')
+    background-repeat: no-repeat
+    background-position: center right
+    display: block
+    float: right
+    color: transparent
+
+button[type='submit'][disabled], .btn-contract, button[type='button'][disabled]
+  background-image: url('../msse_vendors/images/deal_builder/db_arrow_btn_disable.png')
+  background-repeat: no-repeat
+  background-position: center right 18px
+  background-color: $disabled-gray-bg
+  color: $disabled-gray-color
+  border: 1px solid $gray
+  &:before
+    content: ""
+  &:hover
+    border: 1px solid $gray
+    box-shadow: none
+
+// others types of buttons
+button.btn-submit[type='submit']
+  width: 105px
+
+button.btn-secondary[type='submit']
+  color: $dark-gray-color
+  border: 1px solid $gray
+  background-color: $disabled-gray-bg
+  font-family: 'Open Sans'
+  &:before
+    content: ''
+
+.flat-btn[type='submit'], .flat-btn
+  background-image: none
+  background: $white
+  border: 1px solid $gray
+  color: $cyan-color
+  line-height: 100%
+  padding: 10px 20px
+  width: auto
+  &:hover
+    background: $cyan-color
+    border: 1px solid $cyan-color
+    color: $white
+    box-shadow: inset 0 0 transparent
+  &:before
+    content:'\e075'
+    font-family: 'Groupon'
+    background-image: none
+    font-size: 10px
+    box-shadow: none
+    color: $cyan-color
+    margin-left: 10px
+  &:hover:before
+    color: $white
+  &:disabled
+    background: $disabled-gray-bg
+    color: $gray
+    &:before
+      content:'\e075'
+      font-family: 'Groupon'
+      color: $gray
+      margin-left: 10px
+    &:hover:before
+      color: $gray
+
+.cupcake-gallery button[class*='btn'], .cupcake-gallery button[type='submit']
+  text-align: center
+  padding: 12px 0
+  &:before
+    content: none
+  &:after
+    content: ""
+    padding-left: 7px // Width of the background image
+    background-image: url('../msse_vendors/images/deal_builder/db_arrow_btn.png')
+    background-repeat: no-repeat
+    margin-left: 5px
+    display: inline-block
+    height: 10px
+
+.flat-btn[type='submit'],
+a.flat-btn,
+button.flat-btn
+  background-image: none
+  background: $white
+  border: 1px solid $gray
+  color: $cyan-color
+  line-height: 100%
+  padding: 10px 20px
+  width: auto
+  cursor: pointer
+  display: inline-block
+  outline: 0
+  &:hover
+    background: $cyan-color
+    border: 1px solid $cyan-color
+    color: $white
+    box-shadow: inset 0 0 transparent
+    text-decoration: none
+  &:before
+    content:'\e075'
+    font-family: 'Groupon'
+    background-image: none
+    font-size: 10px
+    box-shadow: none
+    color: $cyan-color
+    margin-left: 10px
+  &:hover:before
+    color: $white
+  &:disabled
+    background: $disabled-gray-bg
+    color: $gray
+    &:before
+      content:'\e075'
+      font-family: 'Groupon'
+      color: $gray
+      margin-left: 10px
+    &:hover:before
+      color: $gray
+  &.green
+    color: $white
+    background-color: $green-color
+    &:hover
+      border: 1px solid $green-color
+  &.white
+    color: $green-color
+    background-color: $white
+    border: 1px solid $green-color
+    &:hover
+      color: $white
+      background-color: $green-color
+  &.arrow-right
+    text-decoration: none
+    &:before
+      content: none
+    &:after
+      content: $icon-arrow-right-large
+      font-size: 10px
+      margin-left: 10px
+  &.no-icon
+    &:before,
+    &:after
+      content: none

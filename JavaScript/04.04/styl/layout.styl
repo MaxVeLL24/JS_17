@@ -1,0 +1,97 @@
+h1
+  margin: 0
+
+strong
+  font-weight: bold
+
+form
+  margin-bottom: 0
+
+fieldset
+  padding: 10px 20px
+  input[type="checkbox"]
+    margin: 0
+  div
+    margin: 0 0 20px
+
+body a
+  color: $cyan-color
+
+p
+  margin-bottom: 10px
+
+img
+  width: 100%
+
+body
+  background-color: $soft-gray-color
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif
+  color: $black-color !important
+  padding: 0
+  margin: 0
+  height: 100%
+
+  header
+    position: inherit
+    top: auto
+    border: none
+    width: auto
+    height: $header-height
+    text-align: center
+    color: white
+    background-color: $green-color !important
+    background-image: none
+    border: none
+    z-index: 3
+    font-size: 18px
+    padding: $header-padding
+    box-shadow: 0px 1px 4px $light-gray-color
+    a
+      background-image: url("../msse_vendors/images/deal_builder/deal_builder_brand.png")
+      background-repeat: no-repeat
+      background-position: center center
+      height: $header-inner-height
+      display: block
+      width: 366px
+      margin: 0 auto
+    .offer-builder-title
+      background-image: url("../msse_vendors/images/offers/offer_brand.png")
+
+  footer
+    height 120px
+    background-color: $white
+    border-top: 2px solid $green-color
+    color: $dark-gray-color
+    padding: 30px 20px
+    margin-top: 0
+    overflow: hidden
+    text-shadow: none
+    z-index: 100
+    position: relative
+    a
+      float: left
+      display: block
+      &:hover
+        text-decoration: none
+      &.groupon-works-logo:before
+        content: ''
+        background-image: url("../msse_vendors/images/deal_builder/groupon_works_brand.png")
+        width: 210px
+        height: 43px
+        margin-top: 5px
+      &.groupon-mc-logo:before
+        content: ''
+        background-image: url("../msse_vendors/images/rube_goldberg/rg_grouponmerchant_logo.png")
+        height: 22px
+        width: 248px
+        margin-top: 9px
+      &:before
+        background-repeat: no-repeat
+        display: block
+
+    p
+      float: right
+      font-weight: lighter
+      font-size: 14px
+      text-align: right
+      margin-bottom: 0

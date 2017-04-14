@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .first {
+            margin-top: 50px;
+        }
+
+        #intp {
+            width: 350px;
+            height: 30px;
+            border: none;
+            font-size: 25px;
+            background-color: white;
+            border-bottom: 2px solid darkcyan;
+            color: darkcyan;
+            transition: 350ms;
+        }
+
+        .blue {
+            color: blue;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<form action="" name="my" class="first">
+    <input id="intp" type="text" data-placeholder="Enter your name">
+</form>
+<script>
+    var inp = document.getElementById('intp');
+    var spn = document.createElement('SPAN');
+    var spntext = document.createTextNode('Enter your name');
+    spn.appendChild(spntext);
+    spn.classList.add('blue');
+    console.dir(inp.dataset.placeholder);
+
+    inp.onblur = function (e) {
+        this.value = inp.dataset.placeholder;
+    };
+
+    inp.onfocus = function (e) {
+        this.value = "";
+        this.appendChild(spn);
+    };
+
+
+    //    var input = document.getElementById('inp');
+    //    input.onblur = function (e) {
+    //        if (!isNaN(this.value)) {
+    //            this.classList.add('error');
+    //            this.nextElementSibling.innerHTML = 'Strannoe u vas imya'
+    //        }
+    //    };
+    //    input.onfocus = function (e) {
+    //        if (this.classList.contains('error')) {
+    //            this.nextElementSibling.innerHTML = '';
+    //        }
+    //    }
+</script>
+</body>
+</html>

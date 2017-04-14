@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+<div id="messagescontainer">
+    <div class="pane">
+        <h3>Лошадь</h3>
+        <p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой
+            лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+        <button class="remove-button">[x]</button>
+    </div>
+    <div class="pane">
+        <h3>Осёл</h3>
+        <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии
+            хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+        <button class="remove-button">[x]</button>
+    </div>
+    <div class="pane">
+        <h3>Корова, а также пара слов о диком быке, о волах и о тёлках. </h3>
+        <p>Коро́ва — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного
+            семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами.
+            Молодых (до первой стельности) самок называют
+            тёлками.
+        </p>
+        <button class="remove-button">[x]</button>
+    </div>
+</div>
+
+<form action="" id="form">
+    <input type="text" placeholder="title">
+    <textarea placeholder="Content"></textarea>
+    <button id="add" type="submit">Add</button>
+</form>
+<script>
+    add.onclick = function (e) {
+        e.preventDefault();
+        var e = e || event;
+        var el = document.createElement('div');
+        el.classList.add('pane');
+        var str = ' <h3>' + form.children[0].value + '</h3><p>' + form.children[1].value + '</p><button class="remove-button">[x]</button>';
+        console.log(str);
+        el.insertAdjacentHTML('afterBegin', str);
+        messagescontainer.appendChild(el);
+    };
+
+    var buttons = document.querySelectorAll('.pane button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function (e) {
+            this.parentNode.remove();
+        }
+    }
+
+    messagescontainer.addEventListener('click', function (e) {
+        if (e.target.tagName == 'BUTTON') {
+            e.target.parentNode.remove();
+        }
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+#app #image-error-modal.modal
+  &.dimension .modal-body .modal-inner p.dimension
+    display: block
+  &.size .modal-body .modal-inner p.size
+    display: block
+  .modal-body
+    text-align: center
+    width: 360px
+    height: auto
+    min-width: 0
+    min-height: 0
+    border: 1px solid $red-color
+    padding: 30px 40px
+    position: relative
+    .modal-title
+      .close-modal
+        position: absolute
+        top: 20px
+        right: 20px
+    .modal-inner
+      height: auto
+      p
+        display: none
+      .flat-btn
+        margin-top: 30px
+
+#preview-modal
+  .modal-body
+    padding: 0
+    .modal-title
+      display: inline
+      font-size: 16px
+      font-weight: lighter
+    .modal-inner
+      padding: 20px !important
+      .dealPreview-inner
+        strong, .changedValue
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: bold
+        h1
+          line-height: 1.3em
+          letter-spacing: -1px
+          text-transform: capitalize
+          margin: 0
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          font-size: 35px
+        h3
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          color: $black-color
+          font-size: 24px
+          margin: 20px 0
+        .deal-subtitle
+          font-family: "Open Sans", "Helvetica Neue", sans-serif
+          font-weight: lighter
+          text-transform: capitalize
+          color: $black-subtitle
+          font-size: 16px
+          margin: 5px 0 0
+        figure
+          width: 100%
+          margin: 20px 0
+          overflow: hidden
+          > div
+            font-style: italic
+            margin: 100px auto 0
+            width: 80px
+            font-size: 14px
+            text-align: center
+          .loading-preview
+            background-image: url('../msse_vendors/images/deal_builder/spinner.png')
+            background-repeat: no-repeat
+            height: 33px
+            width: 33px
+            margin: auto
+            &:before
+              content: ''
+              background-image: url('../msse_vendors/images/deal_builder/spinnerdot.gif')
+              background-repeat: no-repeat
+              padding-left: 27px
+              height: 37px
+              float: left
+              width: 32px
+        .price-tag-inner
+          span
+            color: $black
+            font-size: 48px
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: bold
+            &.from-price
+              font-size: 12px
+              font-weight: lighter
+              color: $gray-from-price
+              display: block
+              margin-bottom: -12px
+          .btn-buy-big
+            background-image: linear-gradient($btn-light-green, $btn-dark-green)
+            border: 0
+            box-shadow: none !important
+            border-radius: 32px
+            clear: both
+            color: $white
+            cursor: default
+            display: block
+            float: right
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: lighter
+            font-size: 24px
+            line-height: .75em
+            max-width: 220px
+            margin: 0 auto 20px
+            padding: 1em 0
+            position: static !important
+            text-transform: uppercase
+            text-shadow: none !important
+            width: 55%
+            &:focus
+              -moz-outline: 0 none
+              outline: 0 none
+        .confirm-location span
+          width: auto
+          p
+            line-height: 1.5em
+
+        #deal_discount
+          margin-bottom: 20px
+          overflow: hidden
+          clear: both
+          > dl
+            float: left
+            text-align: center
+            margin: 0 11px 0 0
+            width: 28%
+          dl > dt
+            font-size: 11px
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: lighter
+          dl > dd
+            clear: both
+            font-size: 17px
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: bold
+            display: block
+            margin: 0
+            color: $black
+
+        .confirm-location
+          border-top: 1px solid $gray-line
+          margin-bottom: 20px
+          padding-top: 20px
+          h5
+            margin-bottom:  10px
+            font-size: 12px
+            font-family: "Open Sans", "Helvetica Neue", sans-serif
+            font-weight: lighter
+            color: $dark-gray-color
+            background-image: url("../msse_vendors/images/deal_builder/db_icon_location.png")
+            background-repeat: no-repeat
+            padding: 0 0 0 25px
+            height: 20px
+            vertical-align: middle
+          p
+            font-size: 14px
+            line-height: 1.3
+            margin-bottom: 0px
+            color: $black
+            min-height: 35px
+
+
+        #dealpreview-bottom-inner
+          clear: both
+          p
+            font-size: 14px
+            line-height: 1.3
+            margin-bottom: 0px
+          ul
+            font-size: 14px
+          .left-column
+            float: left
+            clear: both
+            .writeUp
+              h1, h2, h3, h4, h5, h6
+                font-family: "Open Sans", "Helvetica Neue", sans-serif
+                font-weight: lighter
+                color: $black-color
+                font-size: 24px
+                margin: 30px 0 10px
+            // QUESTIONS Q&A
+            .questionnaire-content
+              h5
+                font-size: 14px
+              .question
+                margin-bottom: 20px
+                opacity: 0.3
+                &.current
+                  opacity: 1
+                  &.unanswered
+                    opacity: 1
+                    p
+                      background-position: 0 0
+                  p
+                    font-weight: bold
+                    background-image: none
+                &.unanswered
+                  p
+                    background-image: url("../msse_vendors/images/rube_goldberg/rg_paragraph.png")
+                    background-position: 0 -67px
+                    height: 67px
+                p
+                  display: block
+                  background-color: transparent
+                  background-repeat: no-repeat
+
+          .right-column
+            clear: both
+            div:nth-child(1):before
+              content: ''
+              border-top: 1px solid $gray-line
+              display: block
+              padding-top: 20px
+            .static-map
+              height: 214px
+              margin: auto
+              // width: 214px
+            .confirm-location
+              // width: 82%
+              margin: auto
+              h5
+                font-weight: lighter
+                color: $dark-gray-color
+                height: 20px
+                vertical-align: middle
+              div
+                padding-left: 33px
+                position: relative
+                margin-bottom: 20px
+                p
+                  font-size: 12px
+                  line-height: 1.5em
+                  width: auto
+                .marker:before
+                  color: $green-color
+                  font-size: 35px
+                  position: absolute
+                  top: 0
+                  left: -5px
+                .marker-address:before
+                  content: '\e027'
+                .marker-number:before
+                  content: '\e08b'
+                .market-counter
+                  display: inline
+                  padding: 0
+                  position: absolute
+                  top: 3px
+                  left: 0
+                  text-align: center
+                  color: $white
+                  width: 24px
+
+#app #preview-modal .fine-print
+  padding: 0 0 20px 0
+  font-size: 14px
+  border-top: 1px solid $gray-line
+  img
+    width: 460px
+  .text-example
+    overflow: hidden
+    position: relative
+    height: 33px
+
+#app
+  #upload-modal.modal
+    .modal-body
+      width: 565px
+      padding: 10px 18px 0
+    .modal-inner
+      padding: 0
+      height: auto
+      h6, p
+        text-align: center
+      h6
+        margin-bottom: 0px
+        font-size: 18px
+      p
+        font-size: 14px
+        color: $gray-title-modal-upload-img
+        margin-bottom: 35px
+      div
+        background-color: $gray-box-fill
+        div
+          float: left
+          padding: 0 10px
+          height: 450px
+          width: 258px
+          &:first-child
+            margin-right: 10px
+            & ul
+              border-top: 2px solid $green-color
+              &:before
+                content: 'Do'
+                color: $green-color
+                position: absolute
+                top: -25px
+                left: 0px
+          &:last-child
+            & > span
+              background-color: $white
+              border: 1px dashed $gray
+              height: 133px
+              position: relative
+              > span
+                background-color: $red-color
+                border: 0
+                left: 43px
+                top: -30px
+              img
+                width: 130px
+                margin: -30px auto 0
+                display: block
+            & ul
+              border-top: 2px solid $red-color
+              &:before
+                content: "Don't"
+                color: $red-color
+                position: absolute
+                top: -25px
+                left: 0px
+          > span
+            margin: 60px 10px
+            display: block
+            position: relative
+            > span
+              background-color: $green-color
+              position: absolute
+              padding: 0 10px
+              color: $white
+              line-height: 29px
+              height: 29px
+              display: block
+
+          ul
+            padding-top: 20px
+            margin: 0 2px
+            position: relative
+            color: $gray-text-upload-modal
+            li
+              font-size: 12px
+              padding-bottom: 10px
+    button
+      margin: 30px auto
+      display: block
+
+  #upload-modal.modal button
+    width: 100px
