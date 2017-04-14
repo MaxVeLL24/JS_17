@@ -162,5 +162,19 @@ $(document).ready(function () {
         $('.businessAddress').css({"display": 'none'});
         $('.add-location').css({'display': 'block'})
     });
+    $('button.add_location').click(function (event) {
+        event.preventDefault();
+        var locationInputVal = $('#location-text-box').val();
+        $('.rg-location').clone().appendTo('.flex-active-slide');
+        $('.rg-location').last().find('span').html(locationInputVal);
+        $('.businessAddress').css({"display": 'block'});
+        $('.add-location').css({'display': 'none'})
+
+
+    });
+    $('button.cancel_add_location').click(function () {
+        $('.businessAddress').css({"display": 'block'});
+        $('.add-location').css({'display': 'none'})
+    });
     // myMap();
 });
